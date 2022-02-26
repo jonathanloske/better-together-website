@@ -1,6 +1,6 @@
 baseurl = "/"
-languageCode = "en-us"
-languageLang = "en"
+languageCode = "de-de"
+languageLang = "de"
 title = "Homepage"
 
 # RSS, categories and tags disabled for an easy start
