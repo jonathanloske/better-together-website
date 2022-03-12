@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div class="ph3 bg-off-white">
+    <div class="center mw6 pv3">
+
+        <!-- <img src="{{ .Params.logo }}" alt="" class="db w4 center pv4"> -->
+
+        <div class="flex-ns justify-between-ns mb3">
+            <div>
+                <h4 class="f4 b lh-title mb2 primary">{{ .Params.imprint.heading }}</h4>
+                <div><strong>{{ .Params.imprint.name }}</strong></div>
+                <div>{{ .Params.imprint.street }}</div>
+                <div>{{ .Params.imprint.zipAndCity }}</div>
+                <p>{{ .Params.imprint.country }}</p>
+                <p>{{ .Params.imprint.representedBy }}</p>
+                <div>
+                    Telefonnummer: <span id=phonenumbercontainer>
+                        <a href='javascript:;'
+                            onclick="printcode0(';28185#&;35#&;28185#&;55#&;28185#&;84#&;28185#&;84#&;28185#&;84#&;28185#&;75#&;28185#&;35#&;28185#&;45#&;28185#&;45#&;28185#&;55#&;28185#&;94#&;28185#&;84#&','58182');"
+                            style='color:Red'>Telefonnummer anzeigen</a>
+                    </span>
+                </div>
+                <div>
+                    E-Mail-Adresse: <span id=emailcontainer>
+                        <a href='javascript:;'
+                            onclick="printcode1(';250649#&;901#&;250649#&;111#&;250649#&;99#&;250649#&;64#&;250649#&;801#&;250649#&;501#&;250649#&;79#&;250649#&;901#&;250649#&;301#&;250649#&;46#&;250649#&;011#&;250649#&;501#&;250649#&;801#&;250649#&;411#&;250649#&;101#&;250649#&;89#&;250649#&;64#&;250649#&;411#&;250649#&;101#&;250649#&;401#&;250649#&;611#&;250649#&;101#&;250649#&;301#&;250649#&;111#&;250649#&;611#&;250649#&;64#&;250649#&;411#&;250649#&;101#&;250649#&;611#&;250649#&;611#&;250649#&;101#&;250649#&;89#&','946052');"
+                            style='color:Red'>E-Mail-Adresse anzeigen</a>
+                    </span>
+                </div>
+                <p>Internet: <a href="{{ .Params.imprint.url }}">{{ .Params.imprint.url }}</a></p>
+                <p>{{ .Params.imprint.taxText }}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function printcode0(newcode, add) {
+        newcode = reverseString(newcode);
+        rgx = '&#' + add + ';';
+        newcode = newcode.split(rgx).join('');
+        email = '<a href="tel:' + newcode + '">' + newcode + '</a>';
+        document.getElementById('phonenumbercontainer').innerHTML = email;
+    }
+
+    function printcode1(newcode, add) {
+        newcode = reverseString(newcode);
+        rgx = '&#' + add + ';';
+        newcode = newcode.split(rgx).join('');
+        email = '<a href="mailto:' + newcode + '">' + newcode + '</a>';
+        document.getElementById('emailcontainer').innerHTML = email;
+    }
+    function reverseString(str) { return str.split("").reverse().join(""); }
+</script>
+
+
+{{ end }}
