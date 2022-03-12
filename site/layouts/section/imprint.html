@@ -29,10 +29,33 @@
                 </div>
                 <p>Internet: <a href="{{ .Params.imprint.url }}">{{ .Params.imprint.url }}</a></p>
                 <p>{{ .Params.imprint.taxText }}</p>
+
+                <div>Inhaltlich Verantwortliche gemäß § 55 RStV:</div>
+                <div style="display: flex; justify-content: space-around;">
+                    {{ range .Params.content_owners }}
+                    <div>
+                        <div>{{ .name }}</div>
+                        <div>{{ .street }}</div>
+                        <div>{{ .city }}</div>
+                        <div>{{ .country }}</div>
+                    </div>
+                    {{ end }}
+                </div>
+
+                <p></p>
+
+                <p>
+                    Plattform der EU-Kommission zur Online-Streitbeilegung: <a
+                        href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE">ec.europa.eu/consumers/odr</a>
+                </p>
+
+                <p>Der Verkäufer ist weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer
+                    alternativen Streitbeilegungsstelle teilzunehmen.</p>
             </div>
         </div>
-
     </div>
+
+</div>
 </div>
 
 <script>

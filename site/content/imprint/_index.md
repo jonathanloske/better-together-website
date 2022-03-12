@@ -10,4 +10,13 @@ imprint:
   representedBy: "vertreten durch die Gesellschafter Jonathan Herdt und Vera Loske-Burkhardt"
   url: "http://better-together-dj.com"
   taxText: "Umsatzsteueridentifikationsnummer gemäß §27a Umsatzsteuergesetz: in Beantragung"
+content_owners:
+  - name: "Herr Jonathan Herdt"
+    street: "Bismarckstr. 78"
+    city: "10627 Berlin"
+    country: "Deutschland"
+  - name: "Frau Vera Loske-Burkhardt"
+    street: "Bismarckstr. 78"
+    city: "10627 Berlin"
+    country: "Deutschland"
 ---
