@@ -10,6 +10,7 @@ import HomePreview from "./cms-preview-templates/home";
 // import ValuesPreview from "./cms-preview-templates/values";
 import ImprintPreview from "./cms-preview-templates/imprint";
 import ContactPreview from "./cms-preview-templates/contact";
+import AboutUsPreview from "./cms-preview-templates/about-us";
 
 CMS.registerPreviewStyle(styles, { raw: true });
 CMS.registerPreviewTemplate("home", HomePreview);
@@ -17,5 +18,6 @@ CMS.registerPreviewTemplate("home", HomePreview);
 // CMS.registerPreviewTemplate("products", ProductsPreview);
 // CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("imprint", ImprintPreview);
+CMS.registerPreviewTemplate("about-us", AboutUsPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
 CMS.init();

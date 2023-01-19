@@ -20,6 +20,7 @@
  *    4. Debugging
  *       - Debug all
  *       - Debug children
+ *    5. Site-specific styles
  *
  */
 
@@ -85,3 +86,6 @@
 
 /* Uncomment out the line below to help debug layout issues */
 /*@import './imports/_debug';*/
+
+/* Site-specific styles */
+@import './sites/imprint.css';
