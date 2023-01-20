@@ -1,11 +1,11 @@
 ---
-title: "Über uns"
-heading: Wer wir sind
-text: "Vera und Jonathan"
+title: "Kontakt"
 # logo: "/img/logo.svg"
-contactUs:
-  heading: Wer wir sind
-  text: "Vera und Jonathan"
+contact_entries:
+  - heading: Location
+    text: "Berlin"
+  - heading: Wann könnt ihr uns erreichen?
+    text: "Jederzeit"
 ---
 
 Wir freuen uns, von euch und euren Plänen zu hören.

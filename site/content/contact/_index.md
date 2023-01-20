@@ -1,11 +1,6 @@
 ---
 title: "Kontakt"
-# logo: "/img/logo.svg"
-contact_entries:
-  - heading: Location
-    text: "Berlin"
-  - heading: Wann könnt ihr uns erreichen?
-    text: "Jederzeit"
+#logo: "/img/logo.svg"
 ---
 
 Wir freuen uns, von euch und euren Plänen zu hören.
