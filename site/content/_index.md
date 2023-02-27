@@ -1,6 +1,6 @@
 ---
 title: "Eure Hochzeit - Eure Party"
-subtitle: Better Together - euer DJ in und um Berlin
+subtitle: Better Together - euer DJ in Berlin & Brandenburg
 image: /img/home-jumbotron.jpg
 blurb:
   heading: Warum Better Together?
