@@ -1,6 +1,6 @@
 ---
 title: "Eure Hochzeit - Eure Party"
-subtitle: Mit Better Together für euren schönsten Tag
+subtitle: Mit Better Together für euren schönsten Tag in und um Berlin
 imprint:
   heading: "Impressum"
   name: "Herdt und Loske-Burkhardt GbR"
