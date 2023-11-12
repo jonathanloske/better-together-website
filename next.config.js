@@ -1,3 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { distDir: 'build' }
+const nextConfig = {
+    distDir: 'build',
+    target: 'serverless',
+}
 module.exports = nextConfig
