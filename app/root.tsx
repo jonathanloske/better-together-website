@@ -70,6 +70,9 @@ export default function App() {
                     <a href="/contact" className="link">
                       Kontakt
                     </a>
+                    <a href="/contact-helper" className="link">
+                      Kontakt Helper
+                    </a>
                   </li>
                   <li>
                     <a href="/imprint" className="link">
