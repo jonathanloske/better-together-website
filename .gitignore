@@ -1,11 +1,9 @@
 node_modules
+
 /.cache
-/netlify/functions/server/index.js
 /public/build
-/.netlify
+/build
+.env
 
-/.env
-
-/app/styles/tailwind.css
-
-cypress/videos/
+# Local Netlify folder
+.netlify

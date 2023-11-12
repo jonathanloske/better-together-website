@@ -1,31 +1,16 @@
 [build]
-  command = "npm run build"
-  functions = "netlify/functions"
-  publish = "public"
-
-  [build.environment]
-    # cache Cypress binary in local "node_modules" folder
-    # so Netlify caches it
-    CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
-    # set TERM variable for terminal output
-    TERM = "xterm"
+command = "npm run build"
+publish = "public"
 
 [dev]
-  command = "remix watch"
-  port = 3000
+command = "npm run dev"
+targetPort = 3000
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
+# Set immutable caching for static files, because they have fingerprinted filenames
 
 [[headers]]
-  for = "/build/*"
-  [headers.values]
-    "Cache-Control" = "public, max-age=31536000, s-maxage=31536000"
+for = "/build/*"
 
-[[plugins]]
-  package = "netlify-plugin-cypress"
-  [plugins.inputs]
-    record = true
-    group = "Testing Built Site"
+[headers.values]
+
+"Cache-Control" = "public, max-age=31560000, immutable"
