@@ -11,7 +11,7 @@ export default function Index() {
       <div className="mb4">
         <h4 className="f3 b lh-title mb3 tc">Schreibt uns</h4>
 
-        <form action="" data-netlify>
+        <form action="" data-netlify="true">
           <div className="flex-l mhn1-l">
             <div className="ph1-l w-50-l">
               <fieldset>
