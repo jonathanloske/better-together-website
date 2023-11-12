@@ -5,3 +5,6 @@
 [build]
   command = "yarn build"
   publish = ".next"
+
+[functions]
+  node_bundler = "esbuild"
