@@ -50,6 +50,7 @@ export default function Index() {
             ></textarea>
             <label htmlFor="message">Eure Nachricht</label>
           </fieldset>
+          <input type="hidden" name="form-name" value="contact" />
           <div className="tc">
             <button type="submit" className="btn w-100 w-auto-ns raise">
               Abschicken
