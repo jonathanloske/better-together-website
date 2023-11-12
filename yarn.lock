@@ -112,6 +112,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@netlify/blobs@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@netlify/blobs/-/blobs-2.2.0.tgz#bf634e6f1a43df3fab2088b5093c9e8eda01b393"
+  integrity sha512-j2C0+IvWj9CLNGPoiA7ETquMFDExZTrv4CarjfE6Au0eY3zlinnnTVae7DE+VQFK+U0CDM/O0VvelNy1QbsdwQ==
+
 "@netlify/esbuild-android-64@0.14.39":
   version "0.14.39"
   resolved "https://registry.yarnpkg.com/@netlify/esbuild-android-64/-/esbuild-android-64-0.14.39.tgz#7bd30aba94a92351d2c5e25e178ceb824f3c2f99"
@@ -238,7 +243,7 @@
     "@netlify/esbuild-windows-64" "0.14.39"
     "@netlify/esbuild-windows-arm64" "0.14.39"
 
-"@netlify/functions@^1.3.0":
+"@netlify/functions@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.6.0.tgz#c373423e6fef0e6f7422ac0345e8bbf2cb692366"
   integrity sha512-6G92AlcpFrQG72XU8YH8pg94eDnq7+Q0YJhb8x4qNpdGsvuzvrfHWBmqFGp/Yshmv4wex9lpsTRZOocdrA2erQ==
@@ -253,7 +258,7 @@
     "@netlify/serverless-functions-api" "1.11.0"
     is-promise "^4.0.0"
 
-"@netlify/ipx@^1.3.2":
+"@netlify/ipx@^1.4.5":
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/@netlify/ipx/-/ipx-1.4.5.tgz#c0b38628457786ca3edf365a9a0cf97cdd9d0883"
   integrity sha512-QuPxUj8Bn8hXwjdcA1BF+HPLqFJ2e9OCNrKX/s3hoUFjjqQrNSK8lLARAtzGfOM3BRsTXyi/zGdwBE+oJKd0dw==
@@ -274,16 +279,18 @@
   resolved "https://registry.yarnpkg.com/@netlify/node-cookies/-/node-cookies-0.1.0.tgz#dda912ba618527695cf519fafa221c5e6777c612"
   integrity sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==
 
-"@netlify/plugin-nextjs@^4.29.5-appdir.0":
-  version "4.29.5-appdir.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.29.5-appdir.0.tgz#8001e4cd39858424d39f5e4fce4297b5985665ef"
-  integrity sha512-Yhw+452omZAfILEZKHPB213W7bOduUAQmlG2OccByuxonb1LipT3Ouz1WA9pcqn1ZeWUMEyPBYYSD/Ki7aUFfg==
+"@netlify/plugin-nextjs@^4.41.1":
+  version "4.41.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.41.1.tgz#fd71b02d6b13c3058328d0a0ef5e3d8c6e95d170"
+  integrity sha512-/r4Lfp/A9kqyu2KrRPijXDGDdNMGo3rjYrHpc5kNehTZrsFCyAwNVDvOV/akfUlT8wnpibjsoAmlurF9+zfjRA==
   dependencies:
+    "@netlify/blobs" "^2.2.0"
     "@netlify/esbuild" "0.14.39"
-    "@netlify/functions" "^1.3.0"
-    "@netlify/ipx" "^1.3.2"
+    "@netlify/functions" "^1.6.0"
+    "@netlify/ipx" "^1.4.5"
     "@vercel/node-bridge" "^2.1.0"
     chalk "^4.1.2"
+    chokidar "^3.5.3"
     destr "^1.1.1"
     execa "^5.1.1"
     follow-redirects "^1.15.2"
@@ -295,7 +302,7 @@
     node-stream-zip "^1.15.0"
     outdent "^0.8.0"
     p-limit "^3.1.0"
-    pathe "^0.2.0"
+    pathe "^0.3.0"
     pretty-bytes "^5.6.0"
     regexp-tree "^0.1.24"
     semver "^7.3.5"
@@ -2684,10 +2691,10 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-pathe@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/pathe/-/pathe-0.2.0.tgz#30fd7bbe0a0d91f0e60bae621f5d19e9e225c339"
-  integrity sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==
+pathe@^0.3.0:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/pathe/-/pathe-0.3.9.tgz#4baff768f37f03e3d9341502865fb93116f65191"
+  integrity sha512-6Y6s0vT112P3jD8dGfuS6r+lpa0qqNrLyHPOwvXMnyNTQaYiwgau2DP3aNDsR13xqtGj7rrPo+jFUATpU6/s+g==
 
 pathe@^1.1.0, pathe@^1.1.1:
   version "1.1.1"
