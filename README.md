@@ -1,229 +1,292 @@
-# Next.js Toolbox Template
+# Remix K-pop Stack
 
-![Netlify + Next](https://user-images.githubusercontent.com/43764894/223561089-2b729a3d-2963-4fc1-ad9b-a8618cd3c87e.png)
+![k-pop site image](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1648844684/CleanShot_2022-04-01_at_16.23.40_2x_oo3ppe.jpg)
 
-This is a [Next.js](https://nextjs.org/) v14 project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It is a reference on how to integrate commonly used features within Netlify for Next.js.
+Deployed Site: [kpop-stack.netlify.app](https://kpop-stack.netlify.app)
 
-## Table of Contents:
+Learn more about [Remix Stacks](https://remix.run/stacks).
 
-- [Getting Started](#getting-started)
-- [Deploy to Netlify](#deploy-to-netlify)
-  - [Deploy using the Netlify CLI](#deploy-using-the-netlify-cli)
-  - [Running Locally](#running-locally)
-- [Forms](#forms)
-  - [Adding a Custom Submission Page](#adding-a-custom-submission-page)
-  - [Blocking Bot Spam with a Honeypot Field](#blocking-bot-spam-with-a-honeypot-field)
-  - [Forms Resources](#forms-resources)
-- [Netlify Functions](#netlify-functions)
-  - [Functions Resources](#functions-resources)
-- [Redirects](#redirects)
-  - [Redirect Resources](#redirect-resources)
-- [Next.js Toolbox Template Video Walkthrough](#nextjs-toolbox-template-video-walkthrough)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-
-## Getting Started
-
-After installing the dependencies with `npm install` or `yarn install`, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+```
+npx create-remix --template netlify-templates/kpop-stack
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Click this button to create a new Github repo, new Netlify project and deploy this stack to a [CDN](https://jamstack.org/glossary/cdn/).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/kpop-stack)
 
-## Deploy to Netlify
+## What's in the stack
 
-Want to deploy immediately? Click this button
+- [Netlify](https://netlify.com/) deployment to the [Edge](https://www.netlify.com/products/edge) + deploy previews and CI/CD
+- [Supabase](https://supabase.com/) database and authentication
+- [Tailwind](https://tailwindcss.com/) for styling
+- [Cypress](https://cypress.io) end-to-end testing
+- [Prettier](https://prettier.io) code formatting
+- [ESLint](https://eslint.org) linting
+- [TypeScript](https://typescriptlang.org) static typing
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-toolbox)
+Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --template your/repo`! Make it your own.
 
-Clicking this button will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+---
 
-### Deploy using the Netlify CLI:
-Click the 'Use the Template' button at the top of this repo or clone it with the `git clone` command. Then install the Netlify CLI tool and run `netlify init`. Or straight from the Netlify CLI, use the `netlify sites:create-template` command in you terminal ([learn more about this command here](https://www.netlify.com/blog/create-a-site-from-a-template-using-the-netlify-cli)) to do the entire flow for you.
+## Development
 
-```bash
-git clone https://github.com/netlify-templates/nextjs-toolbox
+- Install all dependencies & the [Netlify CLI](https://docs.netlify.com/cli/get-started/):
 
-npm install netlify-cli -g # to install the Netlify CLI tool globally
+  ```sh
+  npm install
+  npm install netlify-cli -g
+  ```
 
-netlify init # initialize a new Netlify project & deploy
-```
+- Create or connect to your Netlify project by running through the Netlify `init` script:
 
-It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `npm run generate` to create a static project and locate the build project in the `dist` directory.
+  ```sh
+  netlify init
+  ```
 
-The `init` process will also set up continuous deployemnt for your project so that a new build will be triggered & deployed when you push code to the repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
+- Add your Supabase and session environment variables to a `.env` file like [`.env.sample`](./.env.sample) file or through the Netlify project dashboard at [https://app.netlify.com/](https://app.netlify.com/) Site settings/Build & deploy/Environment:
 
-You can also use `netlify deploy (--prod)` to manually deploy and `netlify open` to open your project dashboard.
+  ```
+  SUPABASE_URL=""
+  SUPABASE_ANON_KEY=""
+  SESSION_SECRET=""
+  ```
 
-> 💡 we only have so many keystrokes to give, use `ntl` shorthand for `netlify` or make [an alias of your own](https://www.netlify.com/blog/2020/04/12/speed-up-productivity-with-terminal-aliases/) to save hours...of accumulated miliseconds
+> There is more information about the Supabase variables [in the Database section below](#database). The initial `create-remix` command will [create the `SESSION_SECRET` variable](https://github.com/netlify-templates/kpop-stack/blob/fd68e4de2f4034328481c9b26fa67e298ef20204/remix.init/index.js#L47) which is a random string of 16 characters, so feel free to just set a random 16 chars if not running `remix-create`.
+
+  <details>
+  <summary>Environment Variable list in project dashboard.</summary>
+
+![screenshot of env vars in Netlify UI](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1649265873/CleanShot_2022-04-06_at_13.23.38_2x_sh3hoy.jpg)
+
+  </details>
+
+- Start dev server:
+
+  ```sh
+  npm run dev
+  ```
+
+This starts your app in development mode, rebuilding assets on file changes.
 
 ### Running Locally
 
-You can use `netlify dev` from the command line to access project information like environment variables as well as
+The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
+
+```sh
+npm run dev
+```
+
+The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
+
+It will pull in all the [environment variables](https://docs.netlify.com/configure-builds/environment-variables/#declare-variables) of your Netlify project. You can learn more about this project's Supabase environment variables in [the Database section below](#database).
+
+To start the Netlify development environment:
+
+```sh
+netlify dev
+```
+
+With Netlify Dev you can also:
 
 - test functions
 - test redirects
 - share a live session via url with `netlify dev --live`
 - [and more](https://cli.netlify.com/netlify-dev/) :)
 
-### Deployment Resources
+Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
 
-- [CLI docs](https://docs.netlify.com/cli/get-started/)
-- [File-based Netlify Configuration](https://docs.netlify.com/configure-builds/file-based-configuration/)
-- [Netlify Dev Overview](https://www.youtube.com/watch?v=RL_gtVZ_79Q&t=812s)
-- [Netlify Edge, CDN deployment](https://www.netlify.com/products/edge/)
+### Relevant code:
 
-## Forms
+This is a pretty simple note-taking app, but it's a good example of how you can build a full stack app with Remix and Supabase. The main functionality is creating users, logging in and out, and creating and deleting notes.
 
-Netlify Forms are a way to wire up your native HTML into being able to seamlessly handle submissions. To get a form working, we need to add two extra things:
+- creating users, and logging in and out [./app/models/user.server.ts](./app/models/user.server.ts)
+- user sessions, and verifying them [./app/session.server.ts](./app/session.server.ts)
+- creating, and deleting notes [./app/models/note.server.ts](./app/models/note.server.ts)
 
-1. An extra attribute on the `form` tag, `data-netlify="true"`
+---
 
-Adding this attribute to our `form` tag will let Netlify know when it loads the page, that it needs to be aware of submissions made through it.
+## Database
 
-2. A hidden input in the form, `<input type="hidden" name="form-name" value="feedback" />`
+This project uses [Supabase](https://supabase.com/) for data storage and user authentication.
 
-Adding this extra input allows our form to be given a name that Netlify can store submissions to. It is a hidden input so your users won't see it but it will pass along the name of our form to Netlify when we submit. In our Netlify Admins site under Forms, we will see our Active Form named `feedback` and all submissions will go there.
+### Environment Variables
 
-In your Netlify dashboard, you need to enable the form detection by following the instructions [here](https://docs.netlify.com/forms/setup/#enable-form-detection).
+You will need these 2 environment variables to connect to your Supabase instance:
 
-With both of those we're ready for folks to give us feedback!
+- `SUPABASE_ANON_KEY`:
 
-### Adding a custom submission page
+  Found in Settings/API/Project API keys
+  <details><summary> See screenshot</summary>
 
-While Netlify provides a default submission page for folks, we can customize it as well! With the `action` attribute on the `form` tag we will be able to direct our users to our own page.
+  ![supabase anon key location](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1649193447/Screen_Shot_2022-04-05_at_5.15.45_PM_ipdgcc.jpg)
 
-In [`components/FeedbackForm.js`](./components/FeedbackForm.js) you'll see the form has the attribute `action="/success"` this will take our user to the custom route `/success` which we created under [`pages/success.js`](./pages/success.js). As long as the page exists, you can direct folks to it!
+  </details>
 
-### Blocking bot spam with a honeypot field
+- `SUPABASE_URL`:
 
-Many bots scan through webpages and try to see what pages and forms they can get access to. Instead of letting our website receive spam submissions, we can filter out unrelated submissions with a visually-hidden input field.
+  Found in Settings/API/Configuration/URL
+  <details><summary> See screenshot</summary>
 
-```html
-<p class="hidden">
-  <label>
-    Don’t fill this out if you’re human: <input name="bot-field" />
-  </label>
-</p>
+  ![supabase url location](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1649193610/Screen_Shot_2022-04-05_at_5.18.12_PM_sj7mj8.jpg)
+
+  </details>
+
+You can add your environment variables to an `.env` file (like shown in the sample [`.env.sample`](./.env.sample)) which will not be committed publicly because it is added to the `.gitignore` file. Or you can add it to your Netlify project environment variables (Site settings/Build & deploy/Environment) as shown in the [Development section](#development) so that they can be [easily shared with teammates](https://www.netlify.com/blog/2021/12/09/use-access-and-share-environment-variables-on-netlify).
+
+<details>
+<summary>Database creation</summary>
+
+- You can sign up with Supabase with your GitHub credentials
+- Create a new project on the 'Project' page
+
+  ![CleanShot 2022-03-31 at 11 54 36](https://user-images.githubusercontent.com/8431042/161098029-b2651160-29c5-42fc-a149-a12cc4f2b339.png)
+
+- Next you will need to name the database and makes sure to save the password you select, then you will want to choose a region closes to you
+
+  ![CleanShot 2022-03-31 at 11 55 47](https://user-images.githubusercontent.com/8431042/161098251-8d73f0ab-c9e7-4a78-921e-1dcf65d9ad1c.png)
+
+- It will take some time for the project to be fully scaffold so you will need to wait before the next steps.
+
+</details>
+
+<details>
+<summary>SQL Queries</summary>
+
+- In your Supabase project dashboard, you can find the SQL Editor here
+
+  ![CleanShot 2022-03-31 at 11 57 16](https://user-images.githubusercontent.com/8431042/161098529-9f6fc807-a413-49af-bfc1-1c16a2c4ae2f.png)
+
+- Select "New Query"
+
+  ![CleanShot 2022-03-31 at 11 59 29](https://user-images.githubusercontent.com/8431042/161098865-7c790cbc-db76-45b3-aa75-270af70038ae.png)
+
+- Here are the SQL queries used in the K-pop Stack
+
+  ```sql
+  -- Create public profile table that references our auth.user
+  create table public.profiles (
+    id uuid references auth.users not null,
+    created_at timestamptz not null default current_timestamp,
+    email varchar not null,
+
+    primary key (id)
+  );
+
+  -- Create public notes table
+  create table public.notes (
+    id uuid not null default uuid_generate_v4(),
+    title text,
+    body text,
+    created_at timestamp default current_timestamp,
+    updated_at timestamp default current_timestamp,
+    profile_id uuid references public.profiles not null,
+
+    primary key (id)
+  );
+
+  -- inserts a row into public.users
+  create or replace function public.handle_new_user()
+  returns trigger
+  language plpgsql
+  security definer set search_path = public
+  as $$
+  begin
+    insert into public.profiles (id, email)
+    values (new.id, new.email);
+    return new;
+  end;
+  $$;
+
+  -- trigger the function every time a user is created
+  drop trigger if exists on_auth_user_created on auth.user;
+  create trigger on_auth_user_created
+    after insert on auth.users
+    for each row execute procedure public.handle_new_user();
+  ```
+
+- You can copy these over to the SQL Editor and click the 'Run' button
+
+  ![CleanShot 2022-03-31 at 12 04 31](https://user-images.githubusercontent.com/8431042/161099881-79315a5f-af33-44fc-aee4-daf9a506f23f.png)
+
+- Lastly, you will need to go to 'Authentication and Settings', and switch off "Enable email confirmations" for the project
+
+  ![CleanShot 2022-03-31 at 12 07 47](https://user-images.githubusercontent.com/8431042/161100637-11b7a1f0-9e25-4f1b-8fec-46ebaf047063.png)
+
+</details>
+
+---
+
+## Deployment
+
+This stack has the Netlify [configuration file (netlify.toml)](./netlify.toml) that contains all the information needed to deploy your project to Netlify's [edge nodes](https://www.netlify.com/products/edge).
+
+Want to deploy immediately? Click this button
+
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-toolbox)
+
+Clicking this button will start the setup for a new project and deployment.
+
+### Deploy from the Command Line
+
+Clone this repo with the `git clone` command. Then install the [Netlify CLI](https://docs.netlify.com/cli/get-started/) tool and run `netlify init`.
+
+```sh
+git clone https://github.com/netlify-templates/kpop-stack
+
+npm install netlify-cli -g # to install the Netlify CLI tool globally
+
+netlify init # initialize a new Netlify project & deploy
 ```
 
-Since screenreader users will still have this announced, it is important for us to
-communicate that this is a field not meant to be filled in.
+### CI/CD
 
-For this to work we also need to add a `data-netlify-honeypot` attribute to the form element.
+Using the 'Deploy to Netlify' button or the `init` process will also set up continuous deployment for your project so that a new build will be triggered & deployed when you push code to the repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
 
-```html
-<form data-netlify="true" data-netlify-honeypot="bot-field" action="/success" method="POST"></form>
-```
+You can also use `netlify deploy` or `netlify deploy --prod` to manually deploy then `netlify open` to open your project dashboard.
 
-[See it here in the template code.](https://github.com/netlify-templates/next-toolbox/blob/main/components/FeedbackForm.js#L8)
+> 💡 If you don't use `--prod` on the deploy command you will deploy a preview of your application with a link to share with teammates to see the site deployed without deploying to production
 
-### Forms Resources
-
-- [Netlify Forms Setup](https://docs.netlify.com/forms/setup/)
-- [Netlify Forms](https://www.netlify.com/products/forms/#main)
-- [Netlify Forms - Form Triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
-- [Netlify Forms - Using reCAPTCHA 2](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge)
-
-## Netlify Functions
-
-With Netlify, you can build out server-side code without having to setup and maintain a dedicated server. Inside of our default folder path, [`netlify/functions`](./netlify/functions) you can see an example of the format for JavaScript functions with the [`joke.js`](./netlify/functions/joke.js) file.
-
-The function format expects a function named `handler` to be exported. This will be the function that will be invoked whenever a client makes a request to the generated endpoints. The endpoint's format is followed as `/.netlify/functions/joke`. So whenever the site is deployed, if you go to `https://<site base url>/.netlify/functions/joke` you will see a random joke!
-
-> Side note: In our example, we're using `import` to include data from another location and `export const const handler` to let our function be consumed by Netlify. We're able to do this because of [esbuild](https://esbuild.github.io). This is a bundler configuration we set in our `netlify.toml` under `[functions]`.
-
-### Functions Resources
-
-There is quite a bit you can do with these functions, so here are some additional resources to learn more!
-
-- [Netlify Function Format](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format)
-- [Build Netlify Functions with TypeScript](https://docs.netlify.com/functions/build-with-typescript/)
-- [Event-triggered Functions](https://docs.netlify.com/functions/trigger-on-events/)
-- [What are Background Functions](https://www.netlify.com/blog/2021/01/07/what-are-background-functions/)
-- [Netlify Functions - Examples](https://functions.netlify.com/examples/)
-- [Using esbuild as your bundler for new ECMAScript Features](https://www.netlify.com/blog/2021/04/02/modern-faster-netlify-functions/)
-
-## Redirects
-
-In the [`netlify.toml`](./netlify.toml) configuration file there is an example of how to implement redirects. Redirects can be used to do many things from redirecting Single Page Apps more predictably, redirecting based on country/language to leveraging On-Demand Builders for [Distributed Persistant Rendering](https://www.netlify.com/blog/2021/04/14/distributed-persistent-rendering-a-new-jamstack-approach-for-faster-builds/).
-
-In the example we'll be using redirects to have a shorter endpoint to Netlify functions. By default, you call a Netlify function when requesting a path like `https://yoursite.netlify.com/.netlify/functions/functionName`. Instead, we'll redirect all calls from a path including `/api` to call on the Netlify functions. So the path will be `https://yoursite.netlify.com/api/functionName`, a lot easier to remember too.
-
-
-### Example
-```toml
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/:splat"
-status = 200
-force = true
-```
-
-First we create a section in the `.toml` for the redirect using `[[redirects]]`. Each redirect should have this line to start the redirect code, and the redirects will be executed in the order they appear in the `.toml` from top to bottom.
-
-The bare minimum needed is the `from` and `to`, letting the [CDN](https://www.netlify.com/blog/edge-cdn-serverless-cloud-meaaning) know when a route is requested, the `from`, forward it on to another path, the `to`. In the example, we also added an 'Ok' status code, 200, and set the `force` to true to make sure it _always_ redirects from the `from` path.
-
-There are many ways to use redirects. Check out the resouces below to learn more.
-
-### Redirect Resources
-
-- [Redirect syntax and configuration](https://docs.netlify.com/routing/redirects/#syntax-for-the-netlify-configuration-file)
-- [Redirect options](https://docs.netlify.com/routing/redirects/redirect-options/)
-- [Creating better, more predicatable redirect rules for SPAs](https://www.netlify.com/blog/2020/04/07/creating-better-more-predictable-redirect-rules-for-spas/)
-- [Redirect by country or language](https://docs.netlify.com/routing/redirects/redirect-options/#redirect-by-country-or-language)
-- [On-Demand Builders](https://docs.netlify.com/configure-builds/on-demand-builders/)
-
-## Next.js Toolbox Template Video Walkthrough
-
-https://user-images.githubusercontent.com/76533034/156541634-4dd7ce20-c413-43c1-ac7d-1494dad00338.mp4
+---
 
 ## Testing
 
-### Included Default Testing
+### Cypress
 
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
+We have set up the basic configuration files for [Cypress](https://go.cypress.io/) End-to-End tests in this project. You'll find those in the `cypress` directory. As you make changes, add to an existing file or create a new file in the `cypress/integrations` directory to test your changes.
 
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
+We use [`@testing-library/cypress`](https://testing-library.com/cypress) for selecting elements on the page semantically.
 
-If your team is not interested in this tooling, you can remove them with ease!
+To run these tests in development, run `npm run e2e-test` which will start the dev server for the app as well as the Cypress client.
 
-### Removing Renovate
+To other example of Cypress tests specifically on Remix stacks, check out the `cypress` directory in the [Remix Grunge Stack example](https://github.com/remix-run/grunge-stack/tree/main/cypress).
 
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
+#### Netlify Plugin Cypress
 
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
+We also use [`netlify-plugin-cypress`](https://github.com/cypress-io/netlify-plugin-cypress) to validate our template is working properly. When you deploy this project as is, cypress tests run automatically on a successful build. If you're interested in removing this functionality you will need to go into the `netlify.toml` and remove the plugins section:
 
 ```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
+[[headers]]
+  for = "/build/*"
+  [headers.values]
+    "Cache-Control" = "public, max-age=31536000, s-maxage=31536000"
+
+- [[plugins]]
+-  package = "netlify-plugin-cypress"
 -  [plugins.inputs]
--    enable = false
+-    record = true
+-    group = "Testing Built Site"
 ```
 
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
+You will also need to remove the plugin from the dependencies: `npm uninstall -D netlify-plugin-cypress`
 
-```bash
-npm uninstall -D netlify-plugin-cypress
-```
+### Type Checking
 
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
+This project uses TypeScript. It's recommended to get TypeScript set up for your editor to get a really great in-editor experience with type checking and auto-complete. To run type checking across the whole project, run `npm run typecheck`.
 
-```bash
-npm uninstall cypress
-```
+### Linting
+
+This project uses ESLint for linting. That is configured in `.eslintrc.js`.
+
+### Formatting
+
+We use [Prettier](https://prettier.io/) for auto-formatting in this project. It's recommended to install an editor plugin (like the [VSCode Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) to get auto-formatting on save. There's also a `npm run format` script you can run to format all files in the project.
