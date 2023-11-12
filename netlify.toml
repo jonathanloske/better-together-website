@@ -1,10 +1,10 @@
 [build.environment]
-  YARN_VERSION = "1.22.15"
-  NPM_VERSION = "8.19.3"
+  YARN_VERSION = "1.22.19"
+  NPM_VERSION = "8.19.4"
 
 [build]
   command = "yarn build"
   publish = "dist"
 
 [context.deploy-preview]
-  command = "yarn build:preview"
+  command = "yarn build"
