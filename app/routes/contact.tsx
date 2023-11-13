@@ -14,7 +14,7 @@ export default function Index() {
         <form
           name="contact"
           method="POST"
-          action="/contact?success=true#contact"
+          action="/contact-helper?success=true#contact"
           data-netlify="true"
           netlify-honeypot="surname"
         >
