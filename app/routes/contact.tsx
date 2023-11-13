@@ -11,7 +11,18 @@ export default function Index() {
       <div className="mb4">
         <h4 className="f3 b lh-title mb3 tc">Schreibt uns</h4>
 
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          action="/contact?success=true#contact"
+          data-netlify="true"
+          netlify-honeypot="surname"
+        >
+          <p hidden>
+            <label>
+              Don't fill this out: <input name="surname" />
+            </label>
+          </p>
           <div className="flex-l mhn1-l">
             <div className="ph1-l w-50-l">
               <fieldset>
