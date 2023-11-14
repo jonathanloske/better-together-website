@@ -1,4 +1,31 @@
+import { FormEvent } from "react";
+
 export default function Index() {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const myForm = event.target as HTMLFormElement;
+    const formDataBody = new URLSearchParams(
+      // See https://github.com/microsoft/TypeScript/issues/30584
+      // @ts-ignore
+      new FormData(myForm)
+    ).toString();
+
+    console.log(new URLSearchParams(formDataBody).toString());
+
+    fetch("/contact-helper", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formDataBody,
+    })
+      .then(() =>
+        alert(
+          "Vielen Dank für Deine Nachricht, wir werden uns in Kürze bei dir melden."
+        )
+      )
+      .catch((error) => alert(error));
+  };
+
   return (
     <div>
       <p>
@@ -17,6 +44,7 @@ export default function Index() {
           action="/contact-helper?success=true#contact"
           data-netlify="true"
           netlify-honeypot="surname"
+          onSubmit={handleSubmit}
         >
           <p hidden>
             <label>

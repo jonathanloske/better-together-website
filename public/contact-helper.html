@@ -1,5 +1,13 @@
 <div>
-  <form name="contact" method="POST" data-netlify="true">
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="surname"
+  >
+    <p hidden>
+      <label> Don't fill this out: <input name="surname" /> </label>
+    </p>
     <fieldset>
       <input type="text" id="name" name="name" placeholder="Name" />
       <label for="name">Name</label>
