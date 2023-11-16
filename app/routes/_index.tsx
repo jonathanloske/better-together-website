@@ -1,7 +1,5 @@
 import type { LinksFunction } from "@remix-run/node";
 
-import appStylesHref from "~/styles/routes/_index.css";
-
 export function headers({
   loaderHeaders,
   parentHeaders,
@@ -15,10 +13,6 @@ export function headers({
     "Cache-Control": "public, max-age=60, s-maxage=60",
   };
 }
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: appStylesHref },
-];
 
 export default function Index() {
   return (

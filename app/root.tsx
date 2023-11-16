@@ -13,8 +13,7 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 import tailwindStylesHref from "~/styles/tailwind.css";
-import headerStylesHref from "~/styles/header.css";
-import footerStylesHref from "~/styles/footer.css";
+import rootStylesHref from "~/styles/root.css";
 
 export const meta: MetaFunction = () => [
   {
@@ -26,8 +25,7 @@ export const meta: MetaFunction = () => [
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwindStylesHref },
-  { rel: "stylesheet", href: headerStylesHref },
-  { rel: "stylesheet", href: footerStylesHref },
+  { rel: "stylesheet", href: rootStylesHref },
 ];
 
 export default function App() {
@@ -36,8 +34,12 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <link
+          href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700"
+          rel="stylesheet"
+        ></link>
       </head>
-      <body>
+      <body className="font-family">
         <Header />
         <Outlet />
         <Footer />
