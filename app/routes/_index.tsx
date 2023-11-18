@@ -16,7 +16,10 @@ export function headers({
 
 export default function Index() {
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <main
+      className="mx-auto max-w-3xl"
+      style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}
+    >
       <div className="bg-grey-1 pv4">
         <div className="flex-l mhn1-l ph3 center mw7">
           <h2 className="f2 b lh-title mb2 w-40-l">Warum Better Together?</h2>

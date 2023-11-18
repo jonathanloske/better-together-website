@@ -3,8 +3,8 @@ import InstagramIcon from "./icons/Instagram";
 export default function Index() {
   return (
     <footer className="bg-black px-5 py-2.5 text-white">
-      <div className="max-w-3xl text-center mx-auto">
-        <div className="sm:flex justify-between text-left">
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="justify-between text-left sm:flex">
           <div>
             <h3 className="text-m mb-2.5 font-bold text-violet-600">
               Better Together DJ Berlin
@@ -42,12 +42,12 @@ export default function Index() {
               <li className="inline-block">
                 <a
                   href="https://www.instagram.com/bettertogetherdj/"
-                  className="link bg-white text-black block relative p-2 rounded-full"
+                  className="link relative block rounded-full bg-white p-2 text-black"
                 >
                   <InstagramIcon
                     width="1.5rem"
                     height="1.5rem"
-                    className="block w-4 h-auto max-w-full max-h-full"
+                    className="block h-auto max-h-full w-4 max-w-full"
                   />
                 </a>
               </li>

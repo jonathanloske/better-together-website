@@ -2,7 +2,7 @@
   "include": [
     "remix.env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", "tailwind.config.js", "prettier.config.js",
   ],
   "compilerOptions": {
     "lib": [

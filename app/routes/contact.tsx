@@ -8,10 +8,8 @@ export default function Index() {
     const formDataBody = new URLSearchParams(
       // See https://github.com/microsoft/TypeScript/issues/30584
       // @ts-ignore
-      new FormData(myForm)
+      new FormData(myForm),
     ).toString();
-
-    console.log(new URLSearchParams(formDataBody).toString());
 
     fetch("/contact-helper", {
       method: "POST",
@@ -20,8 +18,8 @@ export default function Index() {
     })
       .then(() =>
         alert(
-          "Vielen Dank für Deine Nachricht, wir werden uns in Kürze bei dir melden."
-        )
+          "Vielen Dank für Deine Nachricht, wir werden uns in Kürze bei dir melden.",
+        ),
       )
       .catch((error) => alert(error));
   };
