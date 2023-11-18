@@ -16,11 +16,19 @@ export function headers({
 
 export default function Index() {
   return (
-    <main className="mx-auto max-w-3xl leading-6">
-      <div className="bg-grey-1 pv4">
-        <div className="flex-l mhn1-l ph3 center mw7">
-          <h2 className="f2 b lh-title mb2 w-40-l">Warum Better Together?</h2>
-          <div className="w-60-l mb0">
+    <main className="leading-6">
+      <div className="bg-grey-1 bg-hero-pattern bg-cover bg-center bg-no-repeat px-11 py-16">
+        <div className="mx-auto max-w-xs px-1 text-center font-bold leading-5 text-white md:max-w-4xl md:py-36">
+          <div className="mb-5 text-6xl">Eure Hochzeit - Eure Party</div>
+          <div className="bg-violet-700 p-1 text-4xl">
+            Better Together - euer DJ in Berlin & Brandenburg
+          </div>
+        </div>
+      </div>
+      <div className="">
+        <div className="">
+          <h2 className="">Warum Better Together?</h2>
+          <div className="">
             <p>
               Ihr wünscht euch eine einzigartige Hochzeit, die zu euch passt und
               einfach Spaß macht? Ihr wollt ein entspanntes House-Set zu eurer
@@ -37,17 +45,17 @@ export default function Index() {
               Party!
             </p>
             <div className="center">
-              <a href="/about-us" className="btn w-auto-ns raise">
+              <a href="/about-us" className="">
                 Hier erfahrt ihr mehr über uns
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-off-white pv4">
-        <div className="ph3 mw7 center">
-          <h2 className="f2 b lh-title mb2">Was wir bieten</h2>
-          <p className="mb4 mw6">
+      <div className="">
+        <div className="">
+          <h2 className="">Was wir bieten</h2>
+          <p className="">
             Mit uns als Hochzeits-DJ in und um Berlin kriegt ihr das volle
             Rundum-Sorglos-Paket: In einem Kennenlerngespräch stimmen wir mit
             euch den Stil eurer Party und eure musikalischen Vorlieben und
@@ -56,17 +64,14 @@ export default function Index() {
             Lichttechnik - und natürlich mit bester Laune 💃🕺
           </p>
 
-          <div className="flex-ns mhn2-ns mb3"></div>
+          <div className=""></div>
         </div>
       </div>
-      <div
-        className="bg-off-white pb4 ph3 mw7 center"
-        style={{ marginTop: "-3rem" }}
-      >
-        <h3 className="b">
+      <div className="">
+        <h3 className="">
           So kann's klingen: DJ Jonathan mit einem Appetizer-Set.
         </h3>
-        <iframe
+        {/* <iframe
           width="704"
           height="396"
           src="https://www.youtube.com/embed/GcH8hmAnyIE"
@@ -75,10 +80,10 @@ export default function Index() {
           className="mw6-ns mw-100"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen={true}
-        ></iframe>
+        ></iframe> */}
 
-        <div className="tc tl-ns mt3">
-          <a href="/contact" className="btn w-auto-ns raise">
+        <div className="">
+          <a href="/contact" className="">
             Überzeugt? Schreibt uns!
           </a>
         </div>
