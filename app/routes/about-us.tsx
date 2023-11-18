@@ -8,7 +8,7 @@ export default function Index() {
 
         {/* <!-- Bild: Portrait Vera & Jo--> */}
         <img
-          src="img/better-together-dj-berlin-portrait-vera-jo.jpg"
+          src="/img/better-together-dj-berlin-portrait-vera-jo.jpg"
           alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Vera und Jonathan. Sie schauen sich an und lachen."
           className="db w-100 mb2 center pv1"
         />
