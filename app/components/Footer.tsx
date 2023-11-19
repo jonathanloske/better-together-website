@@ -2,11 +2,11 @@ import InstagramIcon from "./icons/Instagram";
 
 export default function Index() {
   return (
-    <footer className="bg-black px-5 py-2.5 text-white">
+    <footer className="bg-black px-5 py-8 text-white">
       <div className="mx-auto max-w-3xl text-center">
         <div className="justify-between text-left sm:flex">
           <div>
-            <h3 className="text-m mb-2.5 font-bold text-violet-600">
+            <h3 className="text-m mb-2.5 font-bold text-violet-500">
               Better Together DJ Berlin
             </h3>
             <ul className="mb-3">
@@ -35,7 +35,7 @@ export default function Index() {
           </div>
 
           <div>
-            <h3 className="text-m mb-2.5 font-bold text-violet-600">
+            <h3 className="text-m mb-2.5 font-bold text-violet-500">
               Social media
             </h3>
             <ul className="">
