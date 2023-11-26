@@ -69,11 +69,11 @@ export default function Index() {
           </div>
         </div>
       )}
-      <div className="mx-auto max-w-2xl py-8">
+      <div className="mx-auto max-w-2xl px-4 py-8">
         <div className="text-center">
           <h4 className="text-4xl font-bold">Kontakt</h4>
         </div>
-        <div className="py-4">
+        <div className="py-2 sm:py-4">
           <p>
             Wir freuen uns, von euch und euren Plänen zu hören. Ihr könnt gerne
             das Formular unten verwenden, um uns zu fragen, welche Musik wir im
@@ -83,7 +83,7 @@ export default function Index() {
           </p>
         </div>
         <div className="">
-          <h4 className="pb-2 text-center text-2xl font-bold">Schreibt uns</h4>
+          <h4 className="py-2 text-center text-2xl font-bold">Schreibt uns</h4>
 
           <form
             name="contact"
@@ -98,8 +98,8 @@ export default function Index() {
                 Don't fill this out: <input name="surname" />
               </label>
             </p>
-            <div className="flex pb-2 lg:gap-4">
-              <div className="lg:w-1/2">
+            <div className="flex flex-col sm:flex-row sm:gap-4 sm:pb-2">
+              <div className="w-full sm:w-1/2">
                 <fieldset>
                   <label htmlFor="name">Name</label>
                   <input
@@ -111,7 +111,7 @@ export default function Index() {
                   />
                 </fieldset>
               </div>
-              <div className="lg:w-1/2">
+              <div className="w-full sm:w-1/2">
                 <fieldset>
                   <label htmlFor="email">E-Mail-Adresse</label>
                   <input
