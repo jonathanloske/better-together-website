@@ -16,7 +16,7 @@ export function headers({
 
 export default function Index() {
   return (
-    <main className="bg-black leading-6 text-white">
+    <main className="leading-6 text-white">
       <div className="relative bg-hero-pattern bg-cover bg-center bg-no-repeat px-11 py-16 after:absolute after:bottom-0 after:-mx-11 after:block after:h-12 after:w-full after:bg-gradient-to-b after:from-transparent after:to-black after:sm:h-24">
         <div className="mx-auto max-w-xs px-1 text-center font-bold leading-5 md:max-w-4xl md:py-36">
           <div className="mb-10 text-6xl">Eure Hochzeit - Eure Party</div>

@@ -2,7 +2,7 @@ import InstagramIcon from "./icons/Instagram";
 
 export default function Index() {
   return (
-    <footer className="bg-black px-5 py-8 text-white">
+    <footer className="px-5 py-8 text-white">
       <div className="mx-auto max-w-3xl text-center">
         <div className="justify-between text-left sm:flex">
           <div>

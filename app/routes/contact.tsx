@@ -24,7 +24,7 @@ export default function Index() {
   };
 
   return (
-    <main className="bg-black leading-6 text-white">
+    <main className="leading-6 text-white">
       {hasSuccessfullySubmitted && (
         <div
           className="relative z-10"

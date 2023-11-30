@@ -1,6 +1,6 @@
 export default function Index() {
   return (
-    <main className="bg-black leading-6 text-white">
+    <main className="leading-6 text-white">
       <div className="mx-auto max-w-5xl">
         <div className="px-5 py-8">
           {/* <!-- Überschrift--> */}
