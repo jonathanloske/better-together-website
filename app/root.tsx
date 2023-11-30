@@ -42,7 +42,7 @@ export default function App() {
           rel="stylesheet"
         ></link>
       </head>
-      <body className="font-family">
+      <body className="font-family bg-black">
         <Header />
         <Outlet />
         <Footer />
