@@ -1,46 +1,72 @@
-# Hugo template for Netlify CMS with Netlify Identity
+# Welcome to Remix!
 
-This is a small business template built with [Victor Hugo](https://github.com/netlify/victor-hugo) and [Netlify CMS](https://github.com/netlify/netlify-cms), designed and developed by [Darin Dimitroff](http://www.darindimitroff.com/), [spacefarm.digital](https://www.spacefarm.digital).
+- [Remix Docs](https://remix.run/docs)
+- [Netlify Functions Overview](https://docs.netlify.com/functions/overview)
 
-## Getting started
+## Netlify Setup
 
-Use our deploy button to get your own copy of the repository. 
+1. Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/):
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/one-click-hugo-cms&stack=cms)
-
-This will setup everything needed for running the CMS:
-
-* A new repository in your GitHub account with the code
-* Full Continuous Deployment to Netlify's global CDN network
-* Control users and access with Netlify Identity
-* Manage content with Netlify CMS
-
-Once the initial build finishes, you can invite yourself as a user. Go to the Identity tab in your new site, click "Invite" and send yourself an invite.
-
-Now you're all set, and you can start editing content!
-
-## Local Development
-
-Clone this repository, and run `yarn` or `npm install` from the new folder to install all required dependencies.
-
-Then start the development server with `yarn start` or `npm start`.
-
-## Layouts
-
-The template is based on small, content-agnostic partials that can be mixed and matched. The pre-built pages showcase just a few of the possible combinations. Refer to the `site/layouts/partials` folder for all available partials.
-
-Use Hugo’s `dict` functionality to feed content into partials and avoid repeating yourself and creating discrepancies.
-
-## CSS
-
-The template uses a custom fork of Tachyons and PostCSS with cssnext and cssnano. To customize the template for your brand, refer to `src/css/imports/_variables.css` where most of the important global variables like colors and spacing are stored.
-
-## SVG
-
-All SVG icons stored in `site/static/img/icons` are automatically optimized with SVGO (gulp-svgmin) and concatenated into a single SVG sprite stored as a a partial called `svg.html`. Make sure you use consistent icons in terms of viewport and art direction for optimal results. Refer to an SVG via the `<use>` tag like so:
-
+```sh
+npm i -g netlify-cli
 ```
-<svg width="16px" height="16px" class="db">
-  <use xlink:href="#SVG-ID"></use>
-</svg>
+
+If you have previously installed the Netlify CLI, you should update it to the latest version:
+
+```sh
+npm i -g netlify-cli@latest
+```
+
+2. Sign up and log in to Netlify:
+
+```sh
+netlify login
+```
+
+3. Create a new site:
+
+```sh
+netlify init
+```
+
+## Development
+
+Ensure all packages are installed by running:
+
+```sh
+npm install
+```
+
+Run
+
+```sh
+netlify dev
+```
+
+Open up [http://localhost:3000](http://localhost:3000), and you're ready to go!
+
+### Adding Redirects and Rewrites
+
+To add redirects and rewrites, add them to the `netlify.toml` file. For more information about redirects and rewrites, see the [Netlify docs](https://docs.netlify.com/routing/redirects/).
+
+### Serve your site locally
+
+To serve your site locally in a production-like environment, run
+
+```sh
+npm run start
+```
+
+Your site will be available at [http://localhost:8888](http://localhost:8888). Note that it will not auto-reload when you make changes.
+
+## Deployment
+
+There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
+
+```sh
+# preview deployment
+netlify deploy --build
+
+# production deployment
+netlify deploy --build --prod
 ```

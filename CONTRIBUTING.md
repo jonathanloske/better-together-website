@@ -1,49 +1,50 @@
-# CONTRIBUTING
+# Contributions
 
-Contributions are always welcome, no matter how large or small. Before contributing,
-please read the [code of conduct](CODE_OF_CONDUCT.md).
+🎉 Thanks for considering contributing to this project! 🎉
 
-## Setup
+When contributing to this repository, please first discuss the change you wish to make via an
+[issue](https://github.com/netlify/remix-template/issues/new/choose). Please use the issue templates. They are there to
+help you and to help the maintainers gather information.
 
-```sh
-$ git clone https://github.com/netlify/victor-hugo
-$ cd victor-hugo
-$ npm install
+Before working on an issue, ask to be assigned to it. This makes it clear to other potential contributors that someone
+is working on the issue.
+
+When creating a PR, please use the template. The information in the template helps maintainers review your pull
+request.```
+
+This project was made with ❤️. The simplest way to give back is by starring and sharing it online.
+
+Everyone is welcome regardless of personal background. We enforce a [Code of conduct](CODE_OF_CONDUCT.md) in order to
+promote a positive and inclusive environment.
+
+## Development process
+
+First fork and clone the repository. If you're not sure how to do this, please watch
+[these videos](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github).
+
+Run:
+
+```bash
+npm install
 ```
 
-## Building
+Make sure everything is correctly setup with:
 
-```sh
-$ npm run build
+```bash
+npm test
 ```
 
-## Testing
+## How to write commit messages
 
-```sh
-$ npm run test
-```
+We use [Conventional Commit messages](https://www.conventionalcommits.org/) to automate version management.
 
-```sh
-$ npm run test:watch
-```
+Most common commit message prefixes are:
 
-## Running the server
+- `fix:` which represents bug fixes, and generate a patch release.
+- `feat:` which represents a new feature, and generate a minor release.
+- `feat!:`, `fix!:` or `refactor!:` and generate a major release.
 
-```sh
-$ npm run start
-```
+## Releasing
 
-## Pull Requests
-
-We actively welcome your pull requests.
-
-1. Fork the repo and create your branch from `master`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
-
-## License
-
-By contributing to Victor-Hugo, you agree that your contributions will be licensed
-under its [MIT license](LICENSE).
+1. Merge the release PR
+2. Run `npm publish`

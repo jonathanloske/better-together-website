@@ -1,0 +1,31 @@
+<div>
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="surname"
+  >
+    <p hidden>
+      <label> Don't fill this out: <input name="surname" /> </label>
+    </p>
+    <fieldset>
+      <input type="text" id="name" name="name" placeholder="Name" />
+      <label for="name">Name</label>
+    </fieldset>
+    <fieldset>
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <label for="email">E-Mail-Adresse</label>
+    </fieldset>
+
+    <fieldset>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Eure Nachricht"
+      ></textarea>
+      <label for="message">Eure Nachricht</label>
+    </fieldset>
+    <input type="hidden" name="form-name" value="contact" />
+    <button type="submit">Abschicken</button>
+  </form>
+</div>
