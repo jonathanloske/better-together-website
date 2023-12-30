@@ -130,10 +130,10 @@ export default function Index() {
                 Ich habe Jonathan bei einer Firmenveranstaltung zusammen mit
                 anderen DJs spielen sehen und sein Set war definitiv mein
                 Lieblingsset! Er weiß, wie man die Stimmung anpasst: Manchmal
-                spielt er Publikumslieblinge, aber auch eher Nischentitel, bei
-                denen man sich denken möchte: „Ooooh, was ist das für ein Song,
-                den muss ich mir abspeichern!“. Und du willst einfach nur
-                TANZEN, TANZEN, TANZEN!
+                spielt er Publikumslieblinge, aber auch Nischentitel, bei denen
+                man sich denken möchte: „Ooooh, was ist das für ein Song, den
+                muss ich mir abspeichern!“. Und du willst einfach nur TANZEN,
+                TANZEN, TANZEN!
               </div>
               <div className="mt-2">
                 <a
