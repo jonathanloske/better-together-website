@@ -50,6 +50,7 @@ export default function App() {
           property="og:description"
           content="Better Together ist euer DJ-Service für Berlin und Brandenburg"
         />
+        {/* Image that will be shown on WhatsApp when sharing a link */}
         <meta property="og:image" content="/social-image.png" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="de_DE" />
@@ -74,8 +75,8 @@ export default function App() {
         <link rel="manifest" href="/site.webmanifest?v=1" />
         <link
           rel="mask-icon"
-          href="/safari-pinned-tab.svg?v=1"
-          color="#5bbad5"
+          href="/safari-pinned-tab.svg?v=2"
+          color="#ffffff"
         />
         <link rel="shortcut icon" href="/favicon.ico?v=1" />
         <meta name="msapplication-TileColor" content="#da532c" />

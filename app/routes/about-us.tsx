@@ -69,7 +69,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="">
+          <div className="mx-auto max-w-4xl">
             <div className="mb-4 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-tr from-blue-500 to-purple-950 p-6 lg:ml-auto lg:max-w-3xl lg:flex-row-reverse lg:justify-between lg:bg-gradient-to-l lg:py-8 lg:pr-0">
               {/* <!-- Bild: Jonathan --> */}
               <div className="relative lg:w-1/2 lg:max-w-sm">

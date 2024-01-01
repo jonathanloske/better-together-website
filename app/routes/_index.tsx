@@ -68,15 +68,6 @@ export default function Index() {
                 eine gelungene Party braucht: DJ-Equimpent, passender Audio- und
                 Lichttechnik - und natürlich mit bester Laune 💃🕺
               </p>
-
-              <div className="mt-16 hidden lg:block">
-                <a
-                  href="/contact"
-                  className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-4 py-2 text-lg text-violet-700"
-                >
-                  Überzeugt? Schreibt uns!
-                </a>
-              </div>
             </div>
           </div>
           <div className="mx-auto w-fit px-5 pt-8 text-center">
@@ -97,10 +88,69 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="mt-4 lg:hidden">
+        <div className="mx-auto max-w-md px-5 pt-8 md:max-w-5xl">
+          <div className="text-center text-2xl">
+            Was zufriedene Dancefloor-Besucher sagen
+          </div>
+          <div className="flex flex-wrap content-center justify-between gap-4 pt-4 md:gap-8">
+            <div className="mx-auto w-72 font-bold">
+              <div className="relative rounded-lg bg-gradient-to-tr from-purple-100 to-pink-400 p-4 text-black before:absolute before:left-3 before:top-full before:-mt-px before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-purple-100">
+                Hab Jonathan live bei einem Event gesehen und die Stimmung war
+                am kochen. Die gespielten Tracks waren genau richtig und haben
+                zum Tanzen eingeladen. Würde die beiden unbedingt
+                weiterempfehlen 🥳
+              </div>
+              <div className="mt-2">
+                <a
+                  className="underline"
+                  href="https://maps.app.goo.gl/xFzfDPXHfaVatBDY6"
+                >
+                  Sebastian
+                </a>
+              </div>
+            </div>
+            <div className="mx-auto w-72 font-bold">
+              <div className="relative rounded-lg bg-gradient-to-tr from-purple-100 to-pink-400 p-4 text-black before:absolute before:left-3 before:top-full before:-mt-px before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-purple-100">
+                Tolles DJ-Duo! Ich war bei einer Party, bei der die beiden
+                aufgelegt haben und es war super! Die Stimmung war toll, die
+                Liederauswahl genau passend für uns und es wurden auch alle
+                Musikwünsche direkt umgesetzt 😍
+              </div>
+              <div className="mt-2">
+                <a
+                  className="underline"
+                  href="https://maps.app.goo.gl/jCYxx6So4Gb7Qkg8A"
+                >
+                  Melli
+                </a>
+              </div>
+            </div>
+            <div className="mx-auto w-72 font-bold">
+              <div className="relative rounded-lg bg-gradient-to-tr from-purple-100 to-pink-400 p-4 text-black before:absolute before:left-3 before:top-full before:-mt-px before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-purple-100">
+                Ich habe Jonathan bei einer Firmenveranstaltung zusammen mit
+                anderen DJs spielen sehen und sein Set war definitiv mein
+                Lieblingsset! Er weiß, wie man die Stimmung anpasst: Manchmal
+                spielt er Publikumslieblinge, aber auch Nischentitel, bei denen
+                man sich denken möchte: „Ooooh, was ist das für ein Song, den
+                muss ich mir abspeichern!“. Und du willst einfach nur TANZEN,
+                TANZEN, TANZEN!
+              </div>
+              <div className="mt-2">
+                <a
+                  className="underline"
+                  href="https://maps.app.goo.gl/jQhjW6zsD91UCnKGA"
+                >
+                  Marija
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4">
           <a
             href="/contact"
-            className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700 lg:mx-12"
+            className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700"
           >
             Überzeugt? Schreibt uns!
           </a>
