@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run redirects:enable && remix build",
+    "imgen": "for img in public/img/*.jpg; do sharp -i \"$img\" -f webp -o public/img/smol/\"$(basename \"$img\" .jpg).webp\" resize 300 -- && sharp -i \"$img\" -f webp -o public/img/mid/\"$(basename \"$img\" .jpg).webp\" resize 600 -- && sharp -i \"$img\" -f webp -o public/img/big/\"$(basename \"$img\" .jpg).webp\" resize 1200 --; done;",
     "dev": "npm run redirects:disable && remix dev",
     "start": "netlify serve",
     "typecheck": "tsc -b",
@@ -18,6 +19,7 @@
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.33.3",
     "shx": "^0.3.4"
   },
   "devDependencies": {
