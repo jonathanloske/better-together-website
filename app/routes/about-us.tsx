@@ -1,3 +1,5 @@
+import Image from "~/components/Image";
+
 export default function Index() {
   return (
     <main className="leading-6 text-white">
@@ -12,10 +14,10 @@ export default function Index() {
           <div className="align mb-4 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-br from-blue-500 to-purple-950 p-6 lg:flex-row-reverse lg:bg-gradient-to-r lg:py-8 lg:pr-0">
             {/* <!-- Bild: Portrait Vera & Jo--> */}
             <div className="relative lg:w-1/2">
-              <img
-                src="/img/better-together-dj-berlin-portrait-vera-jo.jpg"
+              <Image
+                name="better-together-dj-berlin-portrait-vera-jo"
                 alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Vera und Jonathan. Sie schauen sich an und lachen."
-                className="w-100 rounded-md lg:rounded-r-none"
+                leftRight="r"
               />
             </div>
 
