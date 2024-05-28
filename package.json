@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npm run redirects:enable && remix build",
+    "build": "npm run imgen && npm run redirects:enable && remix build",
     "imgen": "for img in public/img/*.jpg; do sharp -i \"$img\" -f webp -o public/img/smol/\"$(basename \"$img\" .jpg).webp\" resize 300 -- && sharp -i \"$img\" -f webp -o public/img/mid/\"$(basename \"$img\" .jpg).webp\" resize 600 -- && sharp -i \"$img\" -f webp -o public/img/big/\"$(basename \"$img\" .jpg).webp\" resize 1200 --; done;",
     "dev": "npm run redirects:disable && remix dev",
     "start": "netlify serve",

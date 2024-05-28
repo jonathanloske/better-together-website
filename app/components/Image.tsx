@@ -3,10 +3,10 @@
 interface ImageProps {
   name: string;
   alt: string;
-  leftRight?: 'l' | 'r';
+  className: string;
 }
 
-const Image = ({ name, alt, leftRight = 'l' }: ImageProps) => {
+const Image = ({ name, alt, className}: ImageProps) => {
   const smolSrc = `/img/smol/${name}.webp`;
   const midSrc = `/img/mid/${name}.webp`;
   const bigSrc = `/img/big/${name}.webp`;
@@ -21,7 +21,7 @@ const Image = ({ name, alt, leftRight = 'l' }: ImageProps) => {
     <img
       src={smolSrc}
       alt={alt}
-      className={`w-100 rounded-md lg:rounded-${leftRight}-none`}
+      className={className}
       srcSet={srcset.map(({ width, src }) => `${src} ${width}x`).join(', ')}
     />
   );

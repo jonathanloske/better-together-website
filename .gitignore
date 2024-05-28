@@ -5,6 +5,10 @@ node_modules
 /build
 .env
 
+/img/smol/
+/img/mid/
+/img/big/
+
 # Local Netlify folder
 .netlify
 
