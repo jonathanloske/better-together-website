@@ -18,6 +18,7 @@ export default function Index() {
                 name="better-together-dj-berlin-portrait-vera-jo"
                 alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Vera und Jonathan. Sie schauen sich an und lachen."
                 leftRight="r"
+                className="w-100 rounded-md lg:rounded-r-none"
               />
             </div>
 

@@ -2,12 +2,13 @@ node_modules
 
 /.cache
 /public/build
+/public/_redirects
 /build
 .env
 
-/img/smol/
-/img/mid/
-/img/big/
+/public/img/smol/
+/public/img/mid/
+/public/img/big/
 
 # Local Netlify folder
 .netlify

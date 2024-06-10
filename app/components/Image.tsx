@@ -23,6 +23,7 @@ const Image = ({ name, alt, className}: ImageProps) => {
       alt={alt}
       className={className}
       srcSet={srcset.map(({ width, src }) => `${src} ${width}x`).join(', ')}
+      style={{ width: '100%' }}
     />
   );
 };
