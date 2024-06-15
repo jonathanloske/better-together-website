@@ -12,9 +12,9 @@ const Image = ({ name, alt, className}: ImageProps) => {
   const bigSrc = `/img/big/${name}.webp`;
 
   const srcset = [
-    { width: 1, src: smolSrc },
-    { width: 2, src: midSrc },
-    { width: 4, src: bigSrc },
+    { width: 300, src: smolSrc },
+    { width: 600, src: midSrc },
+    { width: 1200, src: bigSrc },
   ];
 
   return (
@@ -22,7 +22,7 @@ const Image = ({ name, alt, className}: ImageProps) => {
       src={smolSrc}
       alt={alt}
       className={className}
-      srcSet={srcset.map(({ width, src }) => `${src} ${width}x`).join(', ')}
+      srcSet={srcset.map(({ width, src }) => `${src} ${width}w`).join(', ')}
       style={{ width: '100%' }}
     />
   );
