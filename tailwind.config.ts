@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/img/home-jumbotron.jpg')",
+        "hero-pattern": "url('/img/home-jumbotron.webp')",
       },
     },
   },
