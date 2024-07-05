@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run imgen && npm run redirects:enable && remix build",
-    "imgen": "node imagescaler.js",
+    "imgen": "mkdir -p public/img/smol && mkdir -p public/img/mid && mkdir -p public/img/big && node imagescaler.js",
     "dev": "npm run redirects:disable && remix dev",
     "start": "netlify serve",
     "typecheck": "tsc -b",
