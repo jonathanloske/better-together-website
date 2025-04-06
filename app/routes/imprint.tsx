@@ -3,6 +3,10 @@ export default function Index() {
     return str.split("").reverse().join("");
   }
 
+  /**
+   * To produce a new code (for phone numbers), use
+   * newCode.map(partOfNewCode => "&#" + (Number(partOfNewCode) + 48) + ";&#58182;").join("").split("").reverse().join("")
+   */
   function printcode(oldCode: string, add: string, type: "email" | "tel") {
     let newcode = reverseString(oldCode);
     const rgx = `&#${add};`;
@@ -36,7 +40,7 @@ export default function Index() {
                   <button
                     onClick={() =>
                       printcode(
-                        ";28185#&;35#&;28185#&;55#&;28185#&;84#&;28185#&;84#&;28185#&;84#&;28185#&;75#&;28185#&;35#&;28185#&;45#&;28185#&;45#&;28185#&;55#&;28185#&;94#&;28185#&;84#&",
+                        ";28185#&;35#&;28185#&;35#&;28185#&;45#&;28185#&;05#&;28185#&;45#&;28185#&;25#&;28185#&;65#&;28185#&;45#&;28185#&;94#&;28185#&;35#&;28185#&;94#&;28185#&;84#&",
                         "58182",
                         "tel",
                       )
