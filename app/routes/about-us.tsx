@@ -1,3 +1,5 @@
+import Image from "~/components/Image";
+
 export default function Index() {
   return (
     <main className="leading-6 text-white">
@@ -12,8 +14,8 @@ export default function Index() {
           <div className="align mb-4 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-br from-blue-500 to-purple-950 p-6 lg:flex-row-reverse lg:bg-gradient-to-r lg:py-8 lg:pr-0">
             {/* <!-- Bild: Portrait Vera & Jo--> */}
             <div className="relative lg:w-1/2">
-              <img
-                src="/img/better-together-dj-berlin-portrait-vera-jo.jpg"
+              <Image
+                name="better-together-dj-berlin-portrait-vera-jo"
                 alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Vera und Jonathan. Sie schauen sich an und lachen."
                 className="w-100 rounded-md lg:rounded-r-none"
               />
@@ -73,8 +75,8 @@ export default function Index() {
             <div className="mb-4 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-tr from-blue-500 to-purple-950 p-6 lg:ml-auto lg:max-w-3xl lg:flex-row-reverse lg:justify-between lg:bg-gradient-to-l lg:py-8 lg:pr-0">
               {/* <!-- Bild: Jonathan --> */}
               <div className="relative lg:w-1/2 lg:max-w-sm">
-                <img
-                  src="img/better-together-dj-berlin-portrait-jo.jpg"
+                <Image
+                  name="better-together-dj-berlin-portrait-jo"
                   alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Jonathan. Er steht hinter seinem DJ-Pult, das mit Pflanzen und einer Diskokugel geschmückt ist. Er trägt ein farbenfrohes T-Shirt."
                   className="w-100 rounded-md lg:rounded-r-none"
                 />
@@ -96,8 +98,8 @@ export default function Index() {
             <div className="mb-4 flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-bl from-blue-500 to-purple-950 p-6 lg:max-w-3xl lg:flex-row lg:justify-between lg:bg-gradient-to-r lg:py-8 lg:pl-0">
               <div className="relative lg:max-w-sm">
                 {/* <!-- Bild: Vera--> */}
-                <img
-                  src="img/better-together-dj-berlin-portrait-vera-fullbody-square.jpg"
+                <Image
+                  name="better-together-dj-berlin-portrait-vera-fullbody-square"
                   alt="Better Together - euer DJ in Berlin & Brandenburg. Portrait von Vera. Sie lacht."
                   className="w-100 rounded-md lg:rounded-l-none"
                 />
