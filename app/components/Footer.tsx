@@ -1,4 +1,5 @@
 import InstagramIcon from "./icons/Instagram";
+import PrideFlag from "./icons/PrideFlag";
 
 export default function Index() {
   return (
@@ -6,7 +7,8 @@ export default function Index() {
       <div className="mx-auto max-w-3xl text-center">
         <div className="justify-between text-left sm:flex">
           <div>
-            <h3 className="text-m mb-2.5 font-bold text-violet-500">
+            <h3 className="text-m mb-2.5 font-bold text-violet-500 flex items-center gap-2">
+              <PrideFlag className="inline-block" aria-label="LGBTQ+ friendly" />
               Better Together DJ Berlin
             </h3>
             <ul className="mb-3">
