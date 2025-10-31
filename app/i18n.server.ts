@@ -11,7 +11,7 @@ export const i18n = new RemixI18Next({
   i18next: {
     ...i18nextOptions,
     backend: {
-      loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json'),
+      loadPath: resolve(process.cwd(), 'public/locales/{{lng}}/{{ns}}.json'),
     },
   },
   plugins: [Backend],
