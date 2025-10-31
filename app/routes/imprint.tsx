@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function Index() {
+  const { t } = useTranslation();
+
   function reverseString(str: string) {
     return str.split("").reverse().join("");
   }
@@ -23,19 +27,19 @@ export default function Index() {
       <div className="mx-auto max-w-2xl px-4 py-8">
         <div className="">
           <div>
-            <h4 className="mb-4 text-3xl font-bold">Impressum</h4>
+            <h4 className="mb-4 text-3xl font-bold">{t("imprint.title")}</h4>
             <div className="mb-4">
-              <div className="font-bold">Jonathan Loske und Vera Loske GbR</div>
-              <div>Bismarckstr. 78</div>
-              <div>10627 Berlin</div>
-              <p>Deutschland</p>
+              <div className="font-bold">{t("imprint.company")}</div>
+              <div>{t("imprint.address.street")}</div>
+              <div>{t("imprint.address.zip")}</div>
+              <p>{t("imprint.address.country")}</p>
             </div>
             <div className="mb-4">
-              vertreten durch die Gesellschafter Jonathan Loske und Vera Loske
+              {t("imprint.represented")}
             </div>
             <div className="mb-4">
               <div>
-                Telefonnummer:{" "}
+                {t("imprint.phone")}{" "}
                 <span id="telcontainer">
                   <button
                     onClick={() =>
@@ -47,12 +51,12 @@ export default function Index() {
                     }
                     className="cursor-pointer underline"
                   >
-                    Telefonnummer anzeigen
+                    {t("imprint.phoneReveal")}
                   </button>
                 </span>
               </div>
               <div>
-                E-Mail-Adresse:{" "}
+                {t("imprint.email")}{" "}
                 <span id="emailcontainer">
                   <button
                     onClick={() =>
@@ -64,12 +68,12 @@ export default function Index() {
                     }
                     className="cursor-pointer underline"
                   >
-                    E-Mail-Adresse anzeigen
+                    {t("imprint.emailReveal")}
                   </button>
                 </span>
               </div>
               <p>
-                Internet:{" "}
+                {t("imprint.internet")}{" "}
                 <a className="underline" href="http://better-together-dj.com/">
                   http://better-together-dj.com/
                 </a>
@@ -80,22 +84,22 @@ export default function Index() {
               <div>Inhaltlich Verantwortliche gemäß § 55 RStV:</div>
               <div className="flex place-content-around">
                 <div>
-                  <div>Herr Jonathan Loske</div>
-                  <div>Bismarckstr. 78</div>
-                  <div>10627 Berlin</div>
-                  <div>Deutschland</div>
+                  <div>{t("imprint.responsibleMale")}</div>
+                  <div>{t("imprint.address.street")}</div>
+                  <div>{t("imprint.address.zip")}</div>
+                  <div>{t("imprint.address.country")}</div>
                 </div>
                 <div>
-                  <div>Frau Vera Loske</div>
-                  <div>Bismarckstr. 78</div>
-                  <div>10627 Berlin</div>
-                  <div>Deutschland</div>
+                  <div>{t("imprint.responsibleFemale")}</div>
+                  <div>{t("imprint.address.street")}</div>
+                  <div>{t("imprint.address.zip")}</div>
+                  <div>{t("imprint.address.country")}</div>
                 </div>
               </div>
             </div>
 
             <p>
-              Plattform der EU-Kommission zur Online-Streitbeilegung:{" "}
+              {t("imprint.odrPlatform")}{" "}
               <a
                 className="underline"
                 href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE"

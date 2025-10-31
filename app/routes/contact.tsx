@@ -1,6 +1,8 @@
 import { FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
+  const { t } = useTranslation();
   const [hasSuccessfullySubmitted, setHasSuccessfullySubmitted] =
     useState(false);
 
@@ -44,12 +46,11 @@ export default function Index() {
                         className="text-base font-semibold leading-6 text-gray-900"
                         id="modal-title"
                       >
-                        Danke 💜💙
+                        {t("contact.success.title")}
                       </h3>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                          Vielen Dank für Deine Nachricht, wir werden uns in
-                          Kürze bei dir melden.
+                          {t("contact.success.message")}
                         </p>
                       </div>
                     </div>
@@ -61,7 +62,7 @@ export default function Index() {
                     onClick={() => setHasSuccessfullySubmitted(false)}
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                   >
-                    Schließen
+                    {t("contact.success.close")}
                   </button>
                 </div>
               </div>
@@ -71,19 +72,15 @@ export default function Index() {
       )}
       <div className="mx-auto max-w-2xl px-4 py-8">
         <div className="text-center">
-          <h4 className="text-4xl font-bold">Kontakt</h4>
+          <h4 className="text-4xl font-bold">{t("contact.title")}</h4>
         </div>
         <div className="py-2 sm:py-4">
           <p>
-            Wir freuen uns, von euch und euren Plänen zu hören. Ihr könnt gerne
-            das Formular unten verwenden, um uns zu fragen, welche Musik wir im
-            Angebot haben, wie der Hochzeitstag genau aussehen soll oder eine
-            andere Frage stellen. Nachdem ihr uns angeschrieben habt, melden wir
-            uns bei euch für ein kostenloses Kennenlerngespräch.
+            {t("contact.intro")}
           </p>
         </div>
         <div className="">
-          <h4 className="py-2 text-center text-2xl font-bold">Schreibt uns</h4>
+          <h4 className="py-2 text-center text-2xl font-bold">{t("contact.formTitle")}</h4>
 
           <form
             name="contact"
@@ -95,30 +92,30 @@ export default function Index() {
           >
             <p hidden>
               <label>
-                Don't fill this out: <input name="surname" />
+                {t("contact.form.honeypot")} <input name="surname" />
               </label>
             </p>
             <div className="flex flex-col sm:flex-row sm:gap-4 sm:pb-2">
               <div className="w-full sm:w-1/2">
                 <fieldset>
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">{t("contact.form.name")}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Name"
+                    placeholder={t("contact.form.name")}
                     className="h-10 w-full rounded-md px-2 leading-10 text-black"
                   />
                 </fieldset>
               </div>
               <div className="w-full sm:w-1/2">
                 <fieldset>
-                  <label htmlFor="email">E-Mail-Adresse</label>
+                  <label htmlFor="email">{t("contact.form.email")}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder={t("contact.form.emailPlaceholder")}
                     className="h-10 w-full rounded-md px-2 leading-10 text-black"
                   />
                 </fieldset>
@@ -126,11 +123,11 @@ export default function Index() {
             </div>
 
             <fieldset>
-              <label htmlFor="message">Eure Nachricht</label>
+              <label htmlFor="message">{t("contact.form.message")}</label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Eure Nachricht"
+                placeholder={t("contact.form.message")}
                 rows={8}
                 cols={80}
                 className="w-full rounded-md px-2 py-2 leading-5 text-black"
@@ -142,7 +139,7 @@ export default function Index() {
                 type="submit"
                 className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-4 text-lg leading-9 text-violet-700"
               >
-                Abschicken
+                {t("contact.form.submit")}
               </button>
             </div>
           </form>

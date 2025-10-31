@@ -1,34 +1,37 @@
 import InstagramIcon from "./icons/Instagram";
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
+  const { t } = useTranslation();
+
   return (
     <footer className="px-5 py-8 text-white">
       <div className="mx-auto max-w-3xl text-center">
         <div className="justify-between text-left sm:flex">
           <div>
             <h3 className="text-m mb-2.5 font-bold text-violet-500">
-              Better Together DJ Berlin
+              {t("footer.heading")}
             </h3>
             <ul className="mb-3">
               <li>
                 <a href="/" className="hover:underline">
-                  Home
+                  {t("nav.home")}
                 </a>
               </li>
               <li>
                 <a href="/about-us" className="hover:underline">
-                  Über uns
+                  {t("nav.aboutUs")}
                 </a>
               </li>
 
               <li>
                 <a href="/contact" className="hover:underline">
-                  Kontakt
+                  {t("nav.contact")}
                 </a>
               </li>
               <li>
                 <a href="/imprint" className="hover:underline">
-                  Impressum
+                  {t("nav.imprint")}
                 </a>
               </li>
             </ul>
@@ -36,7 +39,7 @@ export default function Index() {
 
           <div>
             <h3 className="text-m mb-2.5 font-bold text-violet-500">
-              Social media
+              {t("footer.socialMedia")}
             </h3>
             <ul className="">
               <li className="inline-block">

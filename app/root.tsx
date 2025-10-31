@@ -1,4 +1,5 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 import {
   Links,
@@ -7,13 +8,26 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
+import { useChangeLanguage } from "remix-i18next/react";
+import { useTranslation } from "react-i18next";
 
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 import tailwindStylesHref from "~/styles/tailwind.css";
 import rootStylesHref from "~/styles/root.css";
+import { i18n } from "~/i18n.server";
+
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const locale = await i18n.getLocale(request);
+  return json({ locale });
+};
+
+export const handle = {
+  i18n: "common",
+};
 
 export const meta: MetaFunction = () => [
   {
@@ -28,8 +42,13 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  const { locale } = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
+
+  useChangeLanguage(locale);
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <meta charSet="utf-8" />
         {/* For more help on these meta tags, see https://stackoverflow.com/a/43154489 */}
