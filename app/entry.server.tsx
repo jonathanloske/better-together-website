@@ -6,10 +6,9 @@ import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { createInstance } from "i18next";
 import { I18nextProvider, initReactI18next } from "react-i18next";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { i18n } from "./i18n.server";
 import i18nextOptions from "./i18nextOptions";
+import { translations } from "./i18n/translations";
 
 const ABORT_DELAY = 5_000;
 
@@ -28,30 +27,12 @@ export default async function handleRequest(
   const lng = await i18n.getLocale(request);
   const ns = i18n.getRouteNamespaces(remixContext);
 
-  // Load translations synchronously for SSR
-  const resources: Record<string, Record<string, any>> = {};
-  for (const language of i18nextOptions.supportedLngs) {
-    resources[language] = {};
-    for (const namespace of ns) {
-      const translationPath = resolve(
-        process.cwd(),
-        `public/locales/${language}/${namespace}.json`
-      );
-      try {
-        resources[language][namespace] = JSON.parse(
-          readFileSync(translationPath, "utf-8")
-        );
-      } catch (error) {
-        console.error(`Failed to load translation file: ${translationPath}`, error);
-      }
-    }
-  }
-
+  // Use bundled translations - no file I/O needed!
   await instance.use(initReactI18next).init({
     ...i18nextOptions,
     lng,
     ns,
-    resources,
+    resources: translations,
   });
 
   return new Promise((resolve, reject) => {

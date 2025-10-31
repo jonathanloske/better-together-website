@@ -1,8 +1,7 @@
 import { RemixI18Next } from 'remix-i18next/server';
 import i18nextOptions from './i18nextOptions';
-import Backend from 'i18next-fs-backend';
-import { resolve } from 'node:path';
 
+// No backend needed - we use bundled translations!
 export const i18n = new RemixI18Next({
   detection: {
     supportedLanguages: i18nextOptions.supportedLngs,
@@ -10,9 +9,5 @@ export const i18n = new RemixI18Next({
   },
   i18next: {
     ...i18nextOptions,
-    backend: {
-      loadPath: resolve(process.cwd(), 'public/locales/{{lng}}/{{ns}}.json'),
-    },
   },
-  plugins: [Backend],
 });
