@@ -1,6 +1,7 @@
 node_modules
 
 /.cache
+/.react-router
 /public/build
 /public/_redirects
 /build
@@ -14,3 +15,6 @@ node_modules
 .netlify
 
 .DS_Store
+
+# TypeScript build info
+tsconfig.tsbuildinfo
