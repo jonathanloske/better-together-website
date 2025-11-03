@@ -1,6 +1,7 @@
 node_modules
 
 /.cache
+/.react-router
 /public/build
 /public/_redirects
 /build

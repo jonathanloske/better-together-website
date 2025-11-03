@@ -1,5 +1,3 @@
-import type { LinksFunction } from "@remix-run/node";
-
 export function headers({
   loaderHeaders,
   parentHeaders,

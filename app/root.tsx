@@ -1,30 +1,24 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from "react-router";
 
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
-import tailwindStylesHref from "~/styles/tailwind.css";
-import rootStylesHref from "~/styles/root.css";
+import "~/styles/tailwind.css";
+import "~/styles/root.css";
 
 export const meta: MetaFunction = () => [
   {
     // max 65 characters
     title: "Better Together DJ für Berlin und Brandenburg",
   },
-];
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: tailwindStylesHref },
-  { rel: "stylesheet", href: rootStylesHref },
 ];
 
 export default function App() {
@@ -94,7 +88,6 @@ export default function App() {
         <Footer />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
