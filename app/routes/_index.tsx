@@ -1,3 +1,5 @@
+import LiteYouTube from "~/components/LiteYouTube";
+
 export default function Index() {
   return (
     <main className="leading-6 text-white">
@@ -6,7 +8,7 @@ export default function Index() {
           src="/img/big/home-jumbotron.webp"
           alt="Better Together DJ Berlin - Hochzeits-DJ"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           width="1200"
           height="800"
@@ -68,17 +70,11 @@ export default function Index() {
               <h3 className="mb-3 font-bold">
                 So kann's klingen: Jonathan mit einem Appetizer-Set.
               </h3>
-              <iframe
-                width="704"
-                height="396"
-                src="https://www.youtube.com/embed/GcH8hmAnyIE"
+              <LiteYouTube
+                videoId="GcH8hmAnyIE"
                 title="YouTube video player"
-                frameBorder="0"
                 className="max-w-full rounded-md sm:max-w-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen={true}
-                loading="lazy"
-              ></iframe>
+              />
             </div>
           </div>
         </div>
