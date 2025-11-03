@@ -11,6 +11,10 @@ import {
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
+// Self-hosted fonts for better performance
+import "@fontsource/nunito-sans/400.css";
+import "@fontsource/nunito-sans/700.css";
+
 import "~/styles/tailwind.css";
 import "~/styles/root.css";
 
@@ -31,6 +35,9 @@ export default function App() {
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
+        {/* Resource hints for external domains */}
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
         {/* max 155 characters */}
         <meta
           name="description"
@@ -77,10 +84,6 @@ export default function App() {
         <meta name="theme-color" content="#ffffff" />
         <Meta />
         <Links />
-        <link
-          href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700"
-          rel="stylesheet"
-        ></link>
       </head>
       <body className="font-family bg-black">
         <Header />

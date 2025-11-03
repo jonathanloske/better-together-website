@@ -1,7 +1,16 @@
 export default function Index() {
   return (
     <main className="leading-6 text-white">
-      <div className="relative bg-hero-pattern bg-cover bg-center bg-no-repeat px-11 py-16 after:absolute after:bottom-0 after:-mx-11 after:block after:h-12 after:w-full after:bg-gradient-to-b after:from-transparent after:to-black after:sm:h-24">
+      <div className="relative px-11 py-16 after:absolute after:bottom-0 after:-mx-11 after:block after:h-12 after:w-full after:bg-gradient-to-b after:from-transparent after:to-black after:sm:h-24">
+        <img
+          src="/img/big/home-jumbotron.webp"
+          alt="Better Together DJ Berlin - Hochzeits-DJ"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          fetchpriority="high"
+          loading="eager"
+          width="1200"
+          height="800"
+        />
         <div className="mx-auto max-w-xs px-1 text-center font-bold leading-5 md:max-w-4xl md:py-36">
           <div className="mb-10 text-6xl">Eure Hochzeit - Eure Party</div>
           <div className="-inset-1 -skew-y-3 bg-violet-700 p-2 text-4xl">
@@ -68,6 +77,7 @@ export default function Index() {
                 className="max-w-full rounded-md sm:max-w-lg"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen={true}
+                loading="lazy"
               ></iframe>
             </div>
           </div>
