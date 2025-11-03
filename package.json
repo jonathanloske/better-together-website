@@ -4,13 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npm run imgen && react-router build && npm run redirects:enable",
+    "build": "npm run imgen && react-router build",
     "imgen": "mkdir -p public/img/smol && mkdir -p public/img/mid && mkdir -p public/img/big && node imagescaler.js",
-    "dev": "npm run redirects:disable && react-router dev",
+    "dev": "react-router dev",
     "start": "netlify serve",
-    "typecheck": "tsc -b",
-    "redirects:enable": "shx cp .redirects build/client/_redirects",
-    "redirects:disable": "shx rm -f public/_redirects"
+    "typecheck": "tsc -b"
   },
   "dependencies": {
     "@netlify/functions": "^2.8.2",
