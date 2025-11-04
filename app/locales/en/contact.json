@@ -1,8 +1,8 @@
 {
   "title": "Contact",
-  "intro": "We look forward to hearing from you and your plans. Feel free to use the form below to ask us what music we offer, what the wedding day should look like, or any other question. After you write to us, we'll get back to you for a free introductory meeting.",
+  "intro": "We look forward to hearing from you and your plans. Feel free to use the form below to ask us what music we offer, what the wedding day should look like, or any other question. After you write us, we'll get back to you for a free introductory meeting.",
   "form": {
-    "title": "Write to us",
+    "title": "Contact us",
     "nameLabel": "Name",
     "namePlaceholder": "Name",
     "emailLabel": "Email Address",
