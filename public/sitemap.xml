@@ -1,27 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- German Home Page -->
   <url>
     <loc>https://better-together-dj.com/</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/" />
   </url>
+
+  <!-- English Home Page -->
+  <url>
+    <loc>https://better-together-dj.com/en</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/" />
+  </url>
+
+  <!-- German About Us -->
   <url>
     <loc>https://better-together-dj.com/about-us</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/about-us" />
   </url>
+
+  <!-- English About Us -->
+  <url>
+    <loc>https://better-together-dj.com/en/about-us</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/about-us" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/about-us" />
+  </url>
+
+  <!-- German Contact -->
   <url>
     <loc>https://better-together-dj.com/contact</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/contact" />
   </url>
+
+  <!-- English Contact -->
+  <url>
+    <loc>https://better-together-dj.com/en/contact</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/contact" />
+  </url>
+
+  <!-- German Imprint -->
   <url>
     <loc>https://better-together-dj.com/imprint</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/imprint" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/imprint" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/imprint" />
+  </url>
+
+  <!-- English Imprint -->
+  <url>
+    <loc>https://better-together-dj.com/en/imprint</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://better-together-dj.com/imprint" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://better-together-dj.com/en/imprint" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://better-together-dj.com/imprint" />
   </url>
 </urlset>

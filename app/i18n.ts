@@ -4,6 +4,14 @@ import { initReactI18next } from "react-i18next";
 // Import translation files
 import commonDE from "./locales/de/common.json";
 import homeDE from "./locales/de/home.json";
+import aboutDE from "./locales/de/about.json";
+import contactDE from "./locales/de/contact.json";
+import imprintDE from "./locales/de/imprint.json";
+import commonEN from "./locales/en/common.json";
+import homeEN from "./locales/en/home.json";
+import aboutEN from "./locales/en/about.json";
+import contactEN from "./locales/en/contact.json";
+import imprintEN from "./locales/en/imprint.json";
 
 // Initialize i18next
 i18n
@@ -13,9 +21,17 @@ i18n
       de: {
         common: commonDE,
         home: homeDE,
+        about: aboutDE,
+        contact: contactDE,
+        imprint: imprintDE,
       },
-      // Additional languages can be added here in the future
-      // en: { common: commonEN, home: homeEN },
+      en: {
+        common: commonEN,
+        home: homeEN,
+        about: aboutEN,
+        contact: contactEN,
+        imprint: imprintEN,
+      },
     },
     lng: "de", // Default language
     fallbackLng: "de",

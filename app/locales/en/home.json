@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "title": "Your Wedding - Your Party",
+    "subtitle": "Better Together - your DJ in Berlin & Brandenburg",
+    "imageAlt": "Better Together DJ Berlin - Wedding DJ"
+  },
+  "whyUs": {
+    "title": "Why Better Together?",
+    "description": "Are you looking for a unique wedding that fits you perfectly and is simply fun? Do you want a relaxed house set for your garden party? Or dance until the early morning hours to your favorite songs, across the hits of the last decades? Or let nothing but hip hop come out of the speakers? For that, you need people who not only understand music, but also sensitively respond to your needs. Hand in hand with you, we give everything to make your wedding an unforgettable experience - exactly as you imagine it. We ensure a suitable music selection that gets you and your guests storming the dance floor. The right music at the right time. Together we create your legendary party!",
+    "learnMoreButton": "Learn more about us here"
+  },
+  "whatWeOffer": {
+    "title": "What We Offer",
+    "description": "With us as your wedding DJ in and around Berlin, you get the complete worry-free package: In an initial meeting, we coordinate the style of your party and your musical preferences and no-gos. On your wedding day, we come with everything needed for a successful party: DJ equipment, appropriate audio and lighting technology - and of course with the best mood 💃🕺"
+  },
+  "videoSection": {
+    "title": "This is how it can sound: Jonathan with an appetizer set.",
+    "videoTitle": "YouTube video player"
+  },
+  "testimonials": {
+    "title": "What satisfied dance floor visitors say",
+    "testimonial1": "Saw Jonathan live at an event and the atmosphere was boiling. The tracks played were just right and invited dancing. Would definitely recommend the two 🥳",
+    "testimonial2": "Great DJ duo! I was at a party where the two of them played and it was super! The atmosphere was great, the song selection was just right for us and all music requests were immediately implemented 😍",
+    "testimonial3": "I saw Jonathan play among other DJ's at a company event and his set was definitely my favourite one! He knows how to fit the mood: sometimes he plays the crowd-pleasers, but also more of niche-tracks which makes you want to think \"ooooh what is this song, I must save it!\". And you just want to DANCE DANCE DANCE!"
+  },
+  "cta": {
+    "convinced": "Convinced? Contact us!"
+  }
+}

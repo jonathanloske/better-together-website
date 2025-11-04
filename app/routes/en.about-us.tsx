@@ -1,8 +1,8 @@
 import Image from "~/components/Image";
 import { createT } from "~/lib/translations";
 
-export default function Index() {
-  const t = createT("de", "about");
+export default function AboutUsEN() {
+  const t = createT("en", "about");
 
   return (
     <main className="leading-6 text-white">
@@ -80,7 +80,7 @@ export default function Index() {
 
           <div className="mt-4 text-center lg:w-full">
             <a
-              href="/contact"
+              href="/en/contact"
               className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700"
             >
               {t("cta.convinced")}

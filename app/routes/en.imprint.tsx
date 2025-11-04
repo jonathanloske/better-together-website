@@ -1,7 +1,7 @@
 import { createT } from "~/lib/translations";
 
-export default function Index() {
-  const t = createT("de", "imprint");
+export default function ImprintEN() {
+  const t = createT("en", "imprint");
 
   function reverseString(str: string) {
     return str.split("").reverse().join("");

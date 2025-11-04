@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "intro": "We look forward to hearing from you and your plans. Feel free to use the form below to ask us what music we offer, what the wedding day should look like, or any other question. After you write us, we'll get back to you for a free introductory meeting.",
+  "form": {
+    "title": "Contact us",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Email",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "Your Message",
+    "submitButton": "Submit",
+    "honeypotLabel": "Don't fill this out:"
+  },
+  "success": {
+    "title": "Thank you 💜💙",
+    "message": "Thank you for your message, we will get back to you shortly.",
+    "closeButton": "Close"
+  }
+}

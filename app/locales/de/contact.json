@@ -1,0 +1,20 @@
+{
+  "title": "Kontakt",
+  "intro": "Wir freuen uns, von euch und euren Plänen zu hören. Ihr könnt gerne das Formular unten verwenden, um uns zu fragen, welche Musik wir im Angebot haben, wie der Hochzeitstag genau aussehen soll oder eine andere Frage stellen. Nachdem ihr uns angeschrieben habt, melden wir uns bei euch für ein kostenloses Kennenlerngespräch.",
+  "form": {
+    "title": "Schreibt uns",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "Email",
+    "messageLabel": "Eure Nachricht",
+    "messagePlaceholder": "Eure Nachricht",
+    "submitButton": "Abschicken",
+    "honeypotLabel": "Don't fill this out:"
+  },
+  "success": {
+    "title": "Danke 💜💙",
+    "message": "Vielen Dank für Deine Nachricht, wir werden uns in Kürze bei dir melden.",
+    "closeButton": "Schließen"
+  }
+}

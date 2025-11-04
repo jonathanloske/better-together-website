@@ -1,27 +1,8 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
 import LiteYouTube from "~/components/LiteYouTube";
 import { createT } from "~/lib/translations";
 
-export default function Index() {
-  const t = createT("de", "home");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Check if user has manually chosen a language this session
-    const hasChosenLanguage = sessionStorage.getItem("languageChosen");
-
-    if (!hasChosenLanguage) {
-      // Detect browser language
-      const browserLang = navigator.language.toLowerCase();
-
-      // Redirect to English if browser prefers English (en, en-US, en-GB, etc.)
-      if (browserLang.startsWith("en")) {
-        sessionStorage.setItem("languageChosen", "true");
-        navigate("/en", { replace: true });
-      }
-    }
-  }, [navigate]);
+export default function IndexEN() {
+  const t = createT("en", "home");
 
   return (
     <main className="leading-6 text-white">
@@ -52,7 +33,7 @@ export default function Index() {
               </p>
               <div className="pt-3 text-center">
                 <a
-                  href="/about-us"
+                  href="/en/about-us"
                   className="mx-auto block h-10 w-fit rounded-md border-2 border-violet-700 bg-white px-2 leading-10 text-violet-700 sm:mx-0"
                 >
                   {t("whyUs.learnMoreButton")}
@@ -132,7 +113,7 @@ export default function Index() {
 
         <div className="mt-4">
           <a
-            href="/contact"
+            href="/en/contact"
             className="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700"
           >
             {t("cta.convinced")}

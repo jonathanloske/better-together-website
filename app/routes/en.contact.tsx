@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
 import { createT } from "~/lib/translations";
 
-export default function Index() {
-  const t = createT("de", "contact");
+export default function ContactEN() {
+  const t = createT("en", "contact");
   const [hasSuccessfullySubmitted, setHasSuccessfullySubmitted] =
     useState(false);
 
