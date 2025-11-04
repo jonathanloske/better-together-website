@@ -1,0 +1,8 @@
+# robots.txt for Better Together DJ
+# Allow all crawlers to index all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://better-together-dj.com/sitemap.xml

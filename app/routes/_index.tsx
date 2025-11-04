@@ -1,21 +1,18 @@
-export function headers({
-  loaderHeaders,
-  parentHeaders,
-}: {
-  loaderHeaders: Headers;
-  parentHeaders: Headers;
-}) {
-  return {
-    // This is an example of how to set caching headers for a route
-    // For more info on headers in Remix, see: https://remix.run/docs/en/v1/route/headers
-    "Cache-Control": "public, max-age=60, s-maxage=60",
-  };
-}
+import LiteYouTube from "~/components/LiteYouTube";
 
 export default function Index() {
   return (
     <main className="leading-6 text-white">
-      <div className="relative bg-hero-pattern bg-cover bg-center bg-no-repeat px-11 py-16 after:absolute after:bottom-0 after:-mx-11 after:block after:h-12 after:w-full after:bg-gradient-to-b after:from-transparent after:to-black after:sm:h-24">
+      <div className="relative px-11 py-16 after:absolute after:bottom-0 after:-mx-11 after:block after:h-12 after:w-full after:bg-gradient-to-b after:from-transparent after:to-black after:sm:h-24">
+        <img
+          src="/img/big/home-jumbotron.webp"
+          alt="Better Together DJ Berlin - Hochzeits-DJ"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          fetchPriority="high"
+          loading="eager"
+          width="1200"
+          height="800"
+        />
         <div className="mx-auto max-w-xs px-1 text-center font-bold leading-5 md:max-w-4xl md:py-36">
           <div className="mb-10 text-6xl">Eure Hochzeit - Eure Party</div>
           <div className="-inset-1 -skew-y-3 bg-violet-700 p-2 text-4xl">
@@ -68,21 +65,16 @@ export default function Index() {
               </p>
             </div>
           </div>
-          <div className="mx-auto w-fit px-5 pt-8 text-center">
+          <div className="mx-auto w-fit max-w-full px-5 pt-8 text-center">
             <div className="rounded-lg bg-gradient-to-br from-blue-500 to-purple-950 p-6">
               <h3 className="mb-3 font-bold">
                 So kann's klingen: Jonathan mit einem Appetizer-Set.
               </h3>
-              <iframe
-                width="704"
-                height="396"
-                src="https://www.youtube.com/embed/GcH8hmAnyIE"
+              <LiteYouTube
+                videoId="GcH8hmAnyIE"
                 title="YouTube video player"
-                frameBorder="0"
-                className="max-w-full rounded-md sm:max-w-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen={true}
-              ></iframe>
+                className="w-[704px] max-w-full rounded-md sm:max-w-lg"
+              />
             </div>
           </div>
         </div>

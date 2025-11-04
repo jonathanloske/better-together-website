@@ -1,0 +1,4 @@
+# Netlify redirects for SSG with client-side routing
+# Static HTML files are served automatically when they exist
+# All other routes fall back to SPA for client-side navigation
+/*  /__spa-fallback.html  200

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a German DJ service website built with Remix.js and deployed on Netlify. The site is for "Better Together" - a DJ service for Berlin and Brandenburg by Jonathan Loske and Vera Loske.
+German DJ service website for "Better Together" (Berlin and Brandenburg) by Jonathan Loske and Vera Loske. Built with React Router (formerly Remix) v7 and deployed on Netlify as a static site.
 
 ## Common Commands
 
@@ -12,18 +12,14 @@ This is a German DJ service website built with Remix.js and deployed on Netlify.
 ```bash
 npm install              # Install dependencies
 npm run dev             # Start development server (localhost:3000)
-netlify dev             # Start development with Netlify functions
+netlify dev             # Start development with Netlify functions (localhost:8888)
+npm run typecheck       # Run TypeScript type checking
 ```
 
 ### Building and Deployment
 ```bash
 npm run build           # Build for production (includes image generation)
 npm run start           # Serve locally in production mode (localhost:8888)
-npm run typecheck       # Run TypeScript type checking
-```
-
-### Image Processing
-```bash
 npm run imgen           # Generate responsive images (smol/mid/big sizes)
 ```
 
@@ -36,40 +32,46 @@ netlify deploy --build --prod   # Production deployment
 ## Architecture
 
 ### Tech Stack
-- **Framework**: Remix.js with React 18
-- **Styling**: Tailwind CSS with custom configurations
-- **Deployment**: Netlify with Netlify Functions
+- **Framework**: React Router v7 (migrated from Remix)
+- **Rendering**: Static Site Generation (SSG) - no SSR
+- **Styling**: Tailwind CSS + PostCSS
+- **Fonts**: Self-hosted Nunito Sans via @fontsource
+- **Video**: lite-youtube-embed for performance
 - **Image Processing**: Sharp for automatic WebP generation
+- **Deployment**: Netlify
 - **Type Safety**: TypeScript
 
-### Key Directories
-- `app/routes/` - Page routes (_index.tsx, about-us.tsx, contact.tsx, imprint.tsx)
-- `app/components/` - Reusable components (Header, Footer, Image, icons)
-- `app/styles/` - CSS files (Tailwind and custom root styles)
-- `public/img/` - Source images with generated responsive variants in smol/mid/big subdirectories
+### Static Site Generation (SSG)
+The site uses pure SSG with no server-side rendering:
+- Configured in `react-router.config.ts` with `ssr: false`
+- All routes prerendered at build time: `/`, `/about-us`, `/contact`, `/imprint`
+- Routes defined in `app/routes/`: `_index.tsx`, `about-us.tsx`, `contact.tsx`, `imprint.tsx`
+- Build output goes to `build/client` (configured in `netlify.toml`)
 
 ### Image System
-The project uses an automated image processing system:
-- Source JPGs in `public/img/` are automatically converted to WebP
-- Three sizes generated: smol (300px), mid (600px), big (1200px)
-- Build process runs `imagescaler.js` to generate responsive images
-- Custom `Image` component handles responsive loading
+Automated responsive image generation via `imagescaler.js`:
+- Source: JPGs in `public/img/`
+- Output: WebP format in three sizes
+  - `smol/`: 300px width
+  - `mid/`: 600px width
+  - `big/`: 1200px width
+- Runs automatically during `npm run build`
+- Custom `Image` component in `app/components/Image.tsx` handles responsive loading
 
-### Netlify Configuration
-- Uses `@netlify/remix-adapter` for deployment
-- Redirects managed via `.redirects` file (enabled/disabled via npm scripts)
-- Caching headers configured for static assets in `netlify.toml`
-- Build command automatically generates images and enables redirects
+### Layout and Components
+- `app/root.tsx`: Root layout with Header, Footer, meta tags, fonts
+- `app/components/Header.tsx`: Navigation header
+- `app/components/Footer.tsx`: Site footer
+- `app/components/Image.tsx`: Responsive image component
+- `app/components/LiteYouTube.tsx`: Lazy-loaded YouTube embed
 
-### Styling Notes
-- German language content throughout
-- Uses Nunito Sans font from Google Fonts
-- Custom hero background image configured in Tailwind
-- Black theme with white text
-- Comprehensive OpenGraph meta tags for social sharing
+### Styling
+- German language content (locale: de_DE)
+- Self-hosted Nunito Sans (400, 700 weights)
+- Black background theme
+- Comprehensive OpenGraph meta tags in `root.tsx`
+- Tailwind config in `tailwind.config.ts`
+- Additional styles in `app/styles/root.css`
 
-### Development Workflow
-1. Run `npm run dev` for development with hot reload
-2. Images are processed during build, not in dev mode
-3. Use `npm run typecheck` to verify TypeScript
-4. Redirects are disabled in dev mode for proper local routing
+### Node Version
+Requires Node.js >= 20.0.0 (specified in `package.json` engines)

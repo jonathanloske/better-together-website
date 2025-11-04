@@ -11,23 +11,23 @@ export default function Index() {
             </h3>
             <ul className="mb-3">
               <li>
-                <a href="/" className="hover:underline">
+                <a href="/" className="inline-block py-2 hover:underline">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/about-us" className="hover:underline">
+                <a href="/about-us" className="inline-block py-2 hover:underline">
                   Über uns
                 </a>
               </li>
 
               <li>
-                <a href="/contact" className="hover:underline">
+                <a href="/contact" className="inline-block py-2 hover:underline">
                   Kontakt
                 </a>
               </li>
               <li>
-                <a href="/imprint" className="hover:underline">
+                <a href="/imprint" className="inline-block py-2 hover:underline">
                   Impressum
                 </a>
               </li>
@@ -42,12 +42,15 @@ export default function Index() {
               <li className="inline-block">
                 <a
                   href="https://www.instagram.com/bettertogetherdj/"
-                  className="link relative block rounded-full bg-white p-2 text-black"
+                  className="link relative block rounded-full bg-white p-3 text-black"
+                  aria-label="Better Together DJ auf Instagram besuchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <InstagramIcon
                     width="1.5rem"
                     height="1.5rem"
-                    className="block h-auto max-h-full w-4 max-w-full"
+                    className="block h-auto max-h-full w-6 max-w-full"
                   />
                 </a>
               </li>

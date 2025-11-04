@@ -7,7 +7,7 @@ export default function Index() {
     <nav className="bg-white px-5 py-2.5">
       <div className="flex items-center justify-between">
         <a href="/" className="mr4 w-56 sm:w-96">
-          <img src="/img/logo/logo-banner.png" />
+          <img src="/img/logo/logo-banner.png" alt="Better Together DJ Berlin Logo" />
         </a>
 
         {/* Desktop Navigation */}
@@ -36,6 +36,8 @@ export default function Index() {
         <button
           className="block md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={isMenuOpen}
         >
           <svg
             className="h-6 w-6 text-gray-500"
