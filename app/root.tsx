@@ -18,16 +18,22 @@ import "@fontsource/nunito-sans/700.css";
 import "~/styles/tailwind.css";
 import "~/styles/root.css";
 
+// Initialize i18n
+import "~/i18n";
+import i18n from "~/i18n";
+
 export const meta: MetaFunction = () => [
   {
     // max 65 characters
-    title: "Better Together DJ für Berlin und Brandenburg",
+    title: i18n.t("seo.title", { ns: "common" }),
   },
 ];
 
 export default function App() {
+  const currentLang = i18n.language || "de";
+
   return (
-    <html lang="de">
+    <html lang={currentLang}>
       <head>
         <meta charSet="utf-8" />
         {/* For more help on these meta tags, see https://stackoverflow.com/a/43154489 */}
@@ -41,20 +47,20 @@ export default function App() {
         {/* max 155 characters */}
         <meta
           name="description"
-          content="Better Together ist euer DJ-Service für Berlin und Brandenburg von Jonathan Loske und Vera Loske"
+          content={i18n.t("seo.description", { ns: "common" })}
         />
         {/* max 35 characters */}
-        <meta property="og:title" content="Better Together DJ (Berlin + BB)" />
+        <meta property="og:title" content={i18n.t("seo.ogTitle", { ns: "common" })} />
         <meta property="og:url" content="https://better-together-dj.com/" />
         {/* max 65 characters */}
         <meta
           property="og:description"
-          content="Better Together ist euer DJ-Service für Berlin und Brandenburg"
+          content={i18n.t("seo.ogDescription", { ns: "common" })}
         />
         {/* Image that will be shown on WhatsApp when sharing a link */}
         <meta property="og:image" content="/social-image.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content="de_DE" />
+        <meta property="og:locale" content={currentLang === "de" ? "de_DE" : "en_US"} />
         {/* Favicons generated with the help of https://realfavicongenerator.net */}
         <link
           rel="apple-touch-icon"

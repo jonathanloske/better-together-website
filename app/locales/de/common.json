@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "aboutUs": "Über uns",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
+  },
+  "seo": {
+    "title": "Better Together DJ für Berlin und Brandenburg",
+    "description": "Better Together ist euer DJ-Service für Berlin und Brandenburg von Jonathan Loske und Vera Loske",
+    "ogTitle": "Better Together DJ (Berlin + BB)",
+    "ogDescription": "Better Together ist euer DJ-Service für Berlin und Brandenburg"
+  }
+}
