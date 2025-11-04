@@ -5,6 +5,7 @@ declare namespace JSX {
       React.HTMLAttributes<HTMLElement> & {
         videoid: string;
         playlabel?: string;
+        style?: React.CSSProperties;
       },
       HTMLElement
     >;

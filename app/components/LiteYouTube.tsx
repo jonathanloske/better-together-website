@@ -26,7 +26,9 @@ const LiteYouTube = ({ videoId, title, className = "" }: LiteYouTubeProps) => {
       <div
         className={className}
         style={{
-          aspectRatio: "16/9",
+          width: "704px",
+          height: "396px",
+          maxWidth: "100%",
           backgroundColor: "#000",
           position: "relative",
           backgroundImage: `url(https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg)`,
@@ -67,6 +69,11 @@ const LiteYouTube = ({ videoId, title, className = "" }: LiteYouTubeProps) => {
       videoid={videoId}
       playlabel={title}
       className={className}
+      style={{
+        width: "704px",
+        height: "396px",
+        maxWidth: "100%"
+      }}
     />
   );
 };
