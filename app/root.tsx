@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 
 import Header from "~/components/Header";
@@ -30,7 +31,15 @@ export const meta: MetaFunction = () => [
 ];
 
 export default function App() {
-  const currentLang = i18n.language || "de";
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith("/en");
+  const currentLang = isEnglish ? "en" : "de";
+  const baseUrl = "https://better-together-dj.com";
+
+  // Get the current path without the /en prefix for hreflang
+  const currentPath = isEnglish
+    ? location.pathname.replace(/^\/en/, "") || "/"
+    : location.pathname;
 
   return (
     <html lang={currentLang}>
@@ -40,6 +49,22 @@ export default function App() {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        {/* Hreflang tags for SEO */}
+        <link
+          rel="alternate"
+          hrefLang="de"
+          href={`${baseUrl}${currentPath}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${baseUrl}/en${currentPath}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}${currentPath}`}
         />
         {/* Resource hints for external domains */}
         <link rel="preconnect" href="https://www.youtube.com" />

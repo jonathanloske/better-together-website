@@ -6,6 +6,17 @@ export default {
 
   // Prerender all routes as static HTML at build time
   async prerender() {
-    return ["/", "/about-us", "/contact", "/imprint"];
+    return [
+      // German routes (default)
+      "/",
+      "/about-us",
+      "/contact",
+      "/imprint",
+      // English routes
+      "/en",
+      "/en/about-us",
+      "/en/contact",
+      "/en/imprint",
+    ];
   },
 } satisfies Config;

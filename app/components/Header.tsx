@@ -1,33 +1,39 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation("common");
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith("/en");
+  const langPrefix = isEnglish ? "/en" : "";
 
   return (
     <nav className="bg-white px-5 py-2.5">
       <div className="flex items-center justify-between">
-        <a href="/" className="mr4 w-56 sm:w-96">
+        <a href={langPrefix || "/"} className="mr4 w-56 sm:w-96">
           <img src="/img/logo/logo-banner.png" alt="Better Together DJ Berlin Logo" />
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden space-x-6 md:flex">
+        <div className="hidden space-x-6 md:flex md:items-center">
+          <LanguageSwitcher />
           <a
-            href="/about-us"
+            href={`${langPrefix}/about-us`}
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.aboutUs")}
           </a>
           <a
-            href="/contact"
+            href={`${langPrefix}/contact`}
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.contact")}
           </a>
           <a
-            href="/imprint"
+            href={`${langPrefix}/imprint`}
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.imprint")}
@@ -62,20 +68,23 @@ export default function Index() {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="mt-4 space-y-2 md:hidden">
+          <div className="pb-2">
+            <LanguageSwitcher />
+          </div>
           <a
-            href="/about-us"
+            href={`${langPrefix}/about-us`}
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.aboutUs")}
           </a>
           <a
-            href="/contact"
+            href={`${langPrefix}/contact`}
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.contact")}
           </a>
           <a
-            href="/imprint"
+            href={`${langPrefix}/imprint`}
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
             {t("nav.imprint")}
