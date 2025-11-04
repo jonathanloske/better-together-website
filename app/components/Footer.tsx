@@ -43,6 +43,9 @@ export default function Index() {
                 <a
                   href="https://www.instagram.com/bettertogetherdj/"
                   className="link relative block rounded-full bg-white p-2 text-black"
+                  aria-label="Better Together DJ auf Instagram besuchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <InstagramIcon
                     width="1.5rem"

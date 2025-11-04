@@ -27,7 +27,7 @@ export const meta: MetaFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="de">
       <head>
         <meta charSet="utf-8" />
         {/* For more help on these meta tags, see https://stackoverflow.com/a/43154489 */}
