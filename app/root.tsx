@@ -76,7 +76,7 @@ export default function App() {
         />
         {/* max 35 characters */}
         <meta property="og:title" content={t("seo.ogTitle")} />
-        <meta property="og:url" content="https://better-together-dj.com/" />
+        <meta property="og:url" content={`${baseUrl}${isEnglish ? "/en" : ""}${location.pathname.replace(/^\/en/, "")}`} />
         {/* max 65 characters */}
         <meta
           property="og:description"
