@@ -9,10 +9,16 @@ export default function LanguageSwitcher() {
     ? location.pathname.replace(/^\/en/, "") || "/"
     : `/en${location.pathname}`;
 
+  // Mark that user has manually chosen a language
+  const handleLanguageClick = () => {
+    sessionStorage.setItem("languageChosen", "true");
+  };
+
   return (
     <div className="flex gap-2 items-center">
       <a
         href={isEnglish ? alternatePath : location.pathname}
+        onClick={handleLanguageClick}
         className={`px-2 py-1 text-sm font-bold rounded ${
           !isEnglish
             ? "bg-violet-700 text-white"
@@ -24,6 +30,7 @@ export default function LanguageSwitcher() {
       <span className="text-gray-400">|</span>
       <a
         href={isEnglish ? location.pathname : alternatePath}
+        onClick={handleLanguageClick}
         className={`px-2 py-1 text-sm font-bold rounded ${
           isEnglish
             ? "bg-violet-700 text-white"

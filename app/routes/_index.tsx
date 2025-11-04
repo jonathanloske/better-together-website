@@ -1,8 +1,27 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import LiteYouTube from "~/components/LiteYouTube";
 
 export default function Index() {
   const { t } = useTranslation("home");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user has manually chosen a language this session
+    const hasChosenLanguage = sessionStorage.getItem("languageChosen");
+
+    if (!hasChosenLanguage) {
+      // Detect browser language
+      const browserLang = navigator.language.toLowerCase();
+
+      // Redirect to English if browser prefers English (en, en-US, en-GB, etc.)
+      if (browserLang.startsWith("en")) {
+        sessionStorage.setItem("languageChosen", "true");
+        navigate("/en", { replace: true });
+      }
+    }
+  }, [navigate]);
 
   return (
     <main className="leading-6 text-white">
