@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router";
+import { createT } from "~/lib/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation("common");
   const location = useLocation();
   const isEnglish = location.pathname.startsWith("/en");
   const langPrefix = isEnglish ? "/en" : "";
+  const t = createT(isEnglish ? "en" : "de", "common");
 
   return (
     <nav className="bg-white px-5 py-2.5">

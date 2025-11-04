@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import LiteYouTube from "~/components/LiteYouTube";
+import { createT } from "~/lib/translations";
 
 export default function Index() {
-  const { t } = useTranslation("home");
+  const t = createT("de", "home");
   const navigate = useNavigate();
 
   useEffect(() => {

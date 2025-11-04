@@ -19,14 +19,13 @@ import "@fontsource/nunito-sans/700.css";
 import "~/styles/tailwind.css";
 import "~/styles/root.css";
 
-// Initialize i18n
-import "~/i18n";
-import i18n from "~/i18n";
+import { createT } from "~/lib/translations";
 
 export const meta: MetaFunction = () => [
   {
     // max 65 characters
-    title: i18n.t("seo.title", { ns: "common" }),
+    // Note: This is a fallback title, each route should define its own meta
+    title: "Better Together DJ für Berlin und Brandenburg",
   },
 ];
 
@@ -34,6 +33,7 @@ export default function App() {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith("/en");
   const currentLang = isEnglish ? "en" : "de";
+  const t = createT(currentLang, "common");
   const baseUrl = "https://better-together-dj.com";
 
   // Get the current path without the /en prefix for hreflang
@@ -72,15 +72,15 @@ export default function App() {
         {/* max 155 characters */}
         <meta
           name="description"
-          content={i18n.t("seo.description", { ns: "common" })}
+          content={t("seo.description")}
         />
         {/* max 35 characters */}
-        <meta property="og:title" content={i18n.t("seo.ogTitle", { ns: "common" })} />
+        <meta property="og:title" content={t("seo.ogTitle")} />
         <meta property="og:url" content="https://better-together-dj.com/" />
         {/* max 65 characters */}
         <meta
           property="og:description"
-          content={i18n.t("seo.ogDescription", { ns: "common" })}
+          content={t("seo.ogDescription")}
         />
         {/* Image that will be shown on WhatsApp when sharing a link */}
         <meta property="og:image" content="/social-image.png" />

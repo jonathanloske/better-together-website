@@ -1,13 +1,8 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import LiteYouTube from "~/components/LiteYouTube";
+import { createT } from "~/lib/translations";
 
 export default function IndexEN() {
-  const { t, i18n } = useTranslation("home");
-
-  useEffect(() => {
-    i18n.changeLanguage("en");
-  }, [i18n]);
+  const t = createT("en", "home");
 
   return (
     <main className="leading-6 text-white">

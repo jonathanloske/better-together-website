@@ -1,13 +1,8 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import Image from "~/components/Image";
+import { createT } from "~/lib/translations";
 
 export default function AboutUsEN() {
-  const { t, i18n } = useTranslation("about");
-
-  useEffect(() => {
-    i18n.changeLanguage("en");
-  }, [i18n]);
+  const t = createT("en", "about");
 
   return (
     <main className="leading-6 text-white">

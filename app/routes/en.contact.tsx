@@ -1,14 +1,10 @@
-import { FormEvent, useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { FormEvent, useState } from "react";
+import { createT } from "~/lib/translations";
 
 export default function ContactEN() {
-  const { t, i18n } = useTranslation("contact");
+  const t = createT("en", "contact");
   const [hasSuccessfullySubmitted, setHasSuccessfullySubmitted] =
     useState(false);
-
-  useEffect(() => {
-    i18n.changeLanguage("en");
-  }, [i18n]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

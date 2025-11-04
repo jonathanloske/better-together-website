@@ -7,6 +7,14 @@
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
+  "footer": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "socialMedia": "Social media",
+    "instagramLabel": "Visit Better Together DJ on Instagram"
+  },
   "seo": {
     "title": "Better Together DJ for Berlin and Brandenburg",
     "description": "Better Together is your DJ service for Berlin and Brandenburg by Jonathan Loske and Vera Loske",
