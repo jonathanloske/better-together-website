@@ -65,7 +65,7 @@ export default function Index() {
               </p>
             </div>
           </div>
-          <div className="mx-auto w-fit px-5 pt-8 text-center">
+          <div className="mx-auto w-fit max-w-full px-5 pt-8 text-center">
             <div className="rounded-lg bg-gradient-to-br from-blue-500 to-purple-950 p-6">
               <h3 className="mb-3 font-bold">
                 So kann's klingen: Jonathan mit einem Appetizer-Set.
@@ -73,7 +73,7 @@ export default function Index() {
               <LiteYouTube
                 videoId="GcH8hmAnyIE"
                 title="YouTube video player"
-                className="max-w-full rounded-md sm:max-w-lg"
+                className="w-[704px] max-w-full rounded-md sm:max-w-lg"
               />
             </div>
           </div>
