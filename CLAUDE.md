@@ -38,6 +38,7 @@ netlify deploy --build --prod   # Production deployment
 - **Fonts**: Self-hosted Nunito Sans via @fontsource
 - **Video**: lite-youtube-embed for performance
 - **Image Processing**: Sharp for automatic WebP generation
+- **Internationalization**: i18next + react-i18next
 - **Deployment**: Netlify
 - **Type Safety**: TypeScript
 
@@ -66,12 +67,27 @@ Automated responsive image generation via `imagescaler.js`:
 - `app/components/LiteYouTube.tsx`: Lazy-loaded YouTube embed
 
 ### Styling
-- German language content (locale: de_DE)
 - Self-hosted Nunito Sans (400, 700 weights)
 - Black background theme
 - Comprehensive OpenGraph meta tags in `root.tsx`
 - Tailwind config in `tailwind.config.ts`
 - Additional styles in `app/styles/root.css`
+
+### Internationalization (i18n)
+Multi-language support infrastructure using i18next:
+- **Configuration**: `app/i18n.ts` - initializes i18next with namespaces
+- **Translations**: `app/locales/{lang}/{namespace}.json` structure
+  - `common.json`: Navigation, SEO, shared content
+  - `home.json`: Home page content (as example)
+- **Current languages**: German (de) - default language
+- **Usage in components**:
+  ```tsx
+  import { useTranslation } from "react-i18next";
+  const { t } = useTranslation("namespace");
+  <h1>{t("key")}</h1>
+  ```
+- **Adding new languages**: See `app/locales/README.md` for detailed instructions
+- **Important**: i18n configured with `useSuspense: false` for SSG compatibility
 
 ### Node Version
 Requires Node.js >= 20.0.0 (specified in `package.json` engines)

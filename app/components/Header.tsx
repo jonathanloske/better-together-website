@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation("common");
 
   return (
     <nav className="bg-white px-5 py-2.5">
@@ -16,19 +18,19 @@ export default function Index() {
             href="/about-us"
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Über uns
+            {t("nav.aboutUs")}
           </a>
           <a
             href="/contact"
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Kontakt
+            {t("nav.contact")}
           </a>
           <a
             href="/imprint"
             className="text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Impressum
+            {t("nav.imprint")}
           </a>
         </div>
 
@@ -36,7 +38,7 @@ export default function Index() {
         <button
           className="block md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Menü schließen" : "Menü öffnen"}
+          aria-label={isMenuOpen ? t("nav.menuClose") : t("nav.menuOpen")}
           aria-expanded={isMenuOpen}
         >
           <svg
@@ -64,19 +66,19 @@ export default function Index() {
             href="/about-us"
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Über uns
+            {t("nav.aboutUs")}
           </a>
           <a
             href="/contact"
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Kontakt
+            {t("nav.contact")}
           </a>
           <a
             href="/imprint"
             className="block text-xl font-bold text-gray-500 no-underline hover:underline"
           >
-            Impressum
+            {t("nav.imprint")}
           </a>
         </div>
       )}
