@@ -76,9 +76,9 @@ export default function IndexEN() {
               <div className="mt-2">
                 <a
                   className="underline"
-                  href="https://maps.app.goo.gl/xFzfDPXHfaVatBDY6"
+                  href="https://maps.app.goo.gl/dcnAL36G4B3ypd9r9"
                 >
-                  Sebastian
+                  Mathilda
                 </a>
               </div>
             </div>
