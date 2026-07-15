@@ -1,13 +1,18 @@
 // TypeScript declarations for @justinribeiro/lite-youtube web component
-declare namespace JSX {
-  interface IntrinsicElements {
-    "lite-youtube": React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement> & {
-        videoid: string;
-        playlabel?: string;
-        style?: React.CSSProperties;
-      },
-      HTMLElement
-    >;
+import type { DetailedHTMLProps, HTMLAttributes, CSSProperties } from "react";
+
+declare module "react" {
+  namespace JSX {
+    interface IntrinsicElements {
+      "lite-youtube": DetailedHTMLProps<
+        HTMLAttributes<HTMLElement> & {
+          videoid: string;
+          playlabel?: string;
+          class?: string;
+          style?: CSSProperties;
+        },
+        HTMLElement
+      >;
+    }
   }
 }
