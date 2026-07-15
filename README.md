@@ -1,7 +1,6 @@
-# Welcome to Remix!
+# Better Together DJ Website
 
-- [Remix Docs](https://remix.run/docs)
-- [Netlify Functions Overview](https://docs.netlify.com/functions/overview)
+A plain static site (no framework) built by a small Node script and deployed to Netlify. See `CLAUDE.md` for the architecture.
 
 ## Netlify Setup
 
@@ -40,10 +39,10 @@ npm install
 Run
 
 ```sh
-netlify dev
+npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000), and you're ready to go!
+Open up [http://localhost:3000](http://localhost:3000), and you're ready to go! This builds the static site once and serves it (no live-reload). For a dev server with full Netlify Forms/Image CDN emulation, use `netlify dev` instead.
 
 ### Adding Redirects and Rewrites
 
