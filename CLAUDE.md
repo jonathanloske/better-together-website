@@ -4,23 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-German DJ service website for "Better Together" (Berlin and Brandenburg) by Jonathan Loske and Vera Loske. Built with React Router (formerly Remix) v7 and deployed on Netlify as a static site.
+German DJ service website for "Better Together" (Berlin and Brandenburg) by Jonathan Loske and Vera Loske. Built as a plain static site (no frontend framework) and deployed on Netlify.
+
+The site was previously built with React Router v7/v8 + Vite; it was rewritten to a hand-rolled static-HTML build to cut the dependency/security-alert surface down to near zero, since the site is fundamentally 4 pages in 2 languages with one contact form.
 
 ## Common Commands
 
 ### Development
 ```bash
-npm install              # Install dependencies
-npm run dev             # Start development server (localhost:3000)
-netlify dev             # Start development with Netlify functions (localhost:8888)
-npm run typecheck       # Run TypeScript type checking
+npm install              # Install dependencies (tailwindcss, @fontsource/nunito-sans, prettier)
+npm run dev              # Build once and serve build/client at localhost:3000 (no live-reload)
+netlify dev               # Build + serve with Netlify Forms and Image CDN emulation (localhost:8888)
 ```
 
 ### Building and Deployment
 ```bash
-npm run build           # Build for production (includes image generation)
-npm run start           # Serve locally in production mode (localhost:8888)
-npm run imgen           # Generate responsive images (smol/mid/big sizes)
+npm run build            # Run build.mjs: render all pages, compile Tailwind, copy assets
+npm run start            # Serve build/client in a production-like environment via `netlify serve` (localhost:8888)
 ```
 
 ### Netlify Deployment
@@ -32,62 +32,46 @@ netlify deploy --build --prod   # Production deployment
 ## Architecture
 
 ### Tech Stack
-- **Framework**: React Router v7 (migrated from Remix)
-- **Rendering**: Static Site Generation (SSG) - no SSR
-- **Styling**: Tailwind CSS + PostCSS
-- **Fonts**: Self-hosted Nunito Sans via @fontsource
-- **Video**: lite-youtube-embed for performance
-- **Image Processing**: Sharp for automatic WebP generation
-- **Internationalization**: i18next + react-i18next
-- **Deployment**: Netlify
-- **Type Safety**: TypeScript
+- **Build**: `build.mjs` — a plain Node script, no bundler/framework
+- **Templating**: JS template-literal functions in `site/` (no JSX, no client-side hydration)
+- **Styling**: Tailwind CSS, compiled via the `tailwindcss` CLI directly (its built-in vendor prefixing means no separate PostCSS/Autoprefixer packages are needed)
+- **Fonts**: Self-hosted Nunito Sans — `@fontsource/nunito-sans` is used only as a source of static font files at build time (see `site/fonts.mjs`), not as a runtime/bundler dependency
+- **Interactivity**: small vanilla JS files in `public/js/`, no client-side framework
+- **Images**: Netlify Image CDN (on-request WebP transforms), no build-time image processing
+- **Internationalization**: a ~20-line custom loader (`site/i18n.mjs`) reading JSON locale files, no i18next
+- **Deployment**: Netlify, static files only (`ssr: false` equivalent — there never was a server)
 
-### Static Site Generation (SSG)
-The site uses pure SSG with no server-side rendering:
-- Configured in `react-router.config.ts` with `ssr: false`
-- All routes prerendered at build time: `/`, `/about-us`, `/contact`, `/imprint`
-- Routes defined in `app/routes/`: `_index.tsx`, `about-us.tsx`, `contact.tsx`, `imprint.tsx`
-- Build output goes to `build/client` (configured in `netlify.toml`)
+### Build Process (`build.mjs`)
+Running `npm run build` does, in order:
+1. Cleans `build/client/`
+2. Copies `public/*` (static assets: images, favicons, `robots.txt`, `sitemap.xml`, `contact-helper.html`, `js/`) into `build/client/`
+3. Copies `site/styles/root.css` into `build/client/assets/`
+4. Runs `tailwindcss` CLI to compile `site/styles/tailwind.css` → `build/client/assets/tailwind.css` (content globs scan `site/**/*.mjs` for class names)
+5. Copies the Latin + Latin-ext Nunito Sans font files from `node_modules/@fontsource/nunito-sans` into `build/client/fonts/` and generates `build/client/assets/fonts.css` (see `site/fonts.mjs`)
+6. Renders all 8 routes (4 pages × 2 languages) to static HTML and writes them to `build/client/` (e.g. `build/client/about-us/index.html`, `build/client/en/about-us/index.html`)
 
-### Image System
-Automated responsive image generation via `imagescaler.js`:
-- Source: JPGs in `public/img/`
-- Output: WebP format in three sizes
-  - `smol/`: 300px width
-  - `mid/`: 600px width
-  - `big/`: 1200px width
-- Runs automatically during `npm run build`
-- Custom `Image` component in `app/components/Image.tsx` handles responsive loading
+Output routes: `/`, `/about-us`, `/contact`, `/imprint`, `/en`, `/en/about-us`, `/en/contact`, `/en/imprint` — matching `public/sitemap.xml`.
 
-### Layout and Components
-- `app/root.tsx`: Root layout with Header, Footer, meta tags, fonts
-- `app/components/Header.tsx`: Navigation header
-- `app/components/Footer.tsx`: Site footer
-- `app/components/Image.tsx`: Responsive image component
-- `app/components/LiteYouTube.tsx`: Lazy-loaded YouTube embed
+### Page Templates (`site/`)
+- `site/layout.mjs`: renders the full `<html>` document — meta tags, hreflang alternates, OpenGraph tags, favicon links, stylesheet links — matching what `root.tsx` used to produce. No route currently overrides the site-wide title/description; all pages share the same per-language SEO meta from `common.json`.
+- `site/pages/{home,about,contact,imprint}.mjs`: one render function per page, taking `{ lang, t }` and returning the page's body HTML
+- `site/partials/{header,footer,languageSwitcher,liteYoutube}.mjs`: shared markup fragments
+- `site/i18n.mjs`: `createT(lang, namespace)` reads `site/locales/{lang}/{namespace}.json` and returns a `t(key)` lookup function (dotted-path keys, same shape as before)
+- `site/image.mjs`: generates `<img>`/`srcset` markup pointing at Netlify's Image CDN endpoint (`/.netlify/images?url=/img/NAME.jpg&w=WIDTH&fm=webp`) instead of pre-generated `smol/mid/big` WebP files
 
-### Styling
-- Self-hosted Nunito Sans (400, 700 weights)
-- Black background theme
-- Comprehensive OpenGraph meta tags in `root.tsx`
-- Tailwind config in `tailwind.config.ts`
-- Additional styles in `app/styles/root.css`
+### Client-side JS (`public/js/`)
+Loaded via `<script type="module">` tags per page (see the `scripts` array per page in `build.mjs`):
+- `main.js` (every page): mobile hamburger menu toggle, language-switcher click tracking (`sessionStorage`), browser-language auto-redirect on the German homepage, and a click-to-load facade for the homepage YouTube embed (replacing the `@justinribeiro/lite-youtube` web component dependency)
+- `contact.js` (contact page only): submits the contact form via `fetch` to avoid a full page reload, then reveals a success modal
+- `imprint.js` (imprint page only): the obfuscated phone/email reveal-on-click logic (anti-scraping), ported unchanged from the previous React implementation
+
+### Contact Form
+Still Netlify Forms (`data-netlify="true"`, no backend). `public/contact-helper.html` is the static fallback page Netlify's build-time bot scans to register the form (also used as the JS-fetch target and the no-JS `action` fallback).
 
 ### Internationalization (i18n)
-Multi-language support infrastructure using i18next:
-- **Configuration**: `app/i18n.ts` - initializes i18next with namespaces
-- **Translations**: `app/locales/{lang}/{namespace}.json` structure
-  - `common.json`: Navigation, SEO, shared content
-  - `home.json`: Home page content (as example)
-- **Current languages**: German (de) - default language
-- **Usage in components**:
-  ```tsx
-  import { useTranslation } from "react-i18next";
-  const { t } = useTranslation("namespace");
-  <h1>{t("key")}</h1>
-  ```
-- **Adding new languages**: See `app/locales/README.md` for detailed instructions
-- **Important**: i18n configured with `useSuspense: false` for SSG compatibility
+- **Locale files**: `site/locales/{lang}/{namespace}.json` — `common`, `home`, `about`, `contact`, `imprint`
+- **Current languages**: German (`de`, default), English (`en`)
+- **Adding new languages**: add a new `site/locales/{lang}/` directory with the same five JSON files, then add the language to the `for (const lang of [...])` loop in `build.mjs`
 
 ### Node Version
-Requires Node.js >= 20.0.0 (specified in `package.json` engines)
+Requires Node.js >= 20.0.0 (specified in `package.json` engines and `.nvmrc`).

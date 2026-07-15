@@ -1,49 +1,18 @@
 {
-  "name": "my-remix-app",
+  "name": "better-together-website",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npm run imgen && react-router build",
-    "imgen": "mkdir -p public/img/smol && mkdir -p public/img/mid && mkdir -p public/img/big && node imagescaler.js",
-    "dev": "react-router dev",
-    "start": "netlify serve",
-    "typecheck": "tsc -b"
-  },
-  "dependencies": {
-    "@fontsource/nunito-sans": "^5.2.7",
-    "@justinribeiro/lite-youtube": "^1.9.0",
-    "@netlify/functions": "^2.8.2",
-    "cross-env": "^7.0.3",
-    "i18next": "^25.6.0",
-    "isbot": "^5.1.21",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-i18next": "^16.2.4",
-    "react-router": "^8.1.0",
-    "sharp": "^0.33.5",
-    "shx": "^0.3.4"
+    "build": "node build.mjs",
+    "dev": "node build.mjs && node serve.mjs",
+    "start": "netlify serve"
   },
   "devDependencies": {
-    "@netlify/vite-plugin-react-router": "^4.0.0",
-    "@react-router/dev": "^8.1.0",
-    "@types/node": "^22.10.1",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
-    "postcss": "^8.5.10",
+    "@fontsource/nunito-sans": "^5.2.7",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.7.2",
-    "vite": "^8.1.0"
-  },
-  "overrides": {
-    "js-yaml": "^4.2.0",
-    "@babel/core": "^7.29.6"
+    "tailwindcss": "^3.4.15"
   },
   "engines": {
-    "node": ">=22.22.0"
+    "node": ">=20.0.0"
   }
 }

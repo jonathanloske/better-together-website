@@ -1,19 +1,10 @@
 node_modules
 
 /.cache
-/.react-router
-/public/build
 /build
 .env
-
-/public/img/smol/
-/public/img/mid/
-/public/img/big/
 
 # Local Netlify folder
 .netlify
 
 .DS_Store
-
-# TypeScript build info
-tsconfig.tsbuildinfo
