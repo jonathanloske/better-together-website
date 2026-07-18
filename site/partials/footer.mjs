@@ -11,6 +11,7 @@ export function renderFooter({ lang, t }) {
         <ul class="mb-3">
           <li><a href="${langPrefix || "/"}" class="inline-block py-2 hover:underline">${t("footer.home")}</a></li>
           <li><a href="${langPrefix}/about-us" class="inline-block py-2 hover:underline">${t("footer.aboutUs")}</a></li>
+          <li><a href="${langPrefix}/international-weddings" class="inline-block py-2 hover:underline">${t("footer.internationalWeddings")}</a></li>
           <li><a href="${langPrefix}/contact" class="inline-block py-2 hover:underline">${t("footer.contact")}</a></li>
           <li><a href="${langPrefix}/imprint" class="inline-block py-2 hover:underline">${t("footer.imprint")}</a></li>
         </ul>

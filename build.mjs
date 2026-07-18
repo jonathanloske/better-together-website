@@ -14,6 +14,7 @@ import { renderHome } from "./site/pages/home.mjs";
 import { renderAbout } from "./site/pages/about.mjs";
 import { renderContact } from "./site/pages/contact.mjs";
 import { renderImprint } from "./site/pages/imprint.mjs";
+import { renderInternationalWeddings } from "./site/pages/internationalWeddings.mjs";
 import { buildFonts } from "./site/fonts.mjs";
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
@@ -26,6 +27,13 @@ const PAGES = [
     namespace: "about",
     render: renderAbout,
     scripts: ["/js/main.js"],
+  },
+  {
+    slug: "international-weddings",
+    namespace: "internationalWeddings",
+    render: renderInternationalWeddings,
+    scripts: ["/js/main.js"],
+    hasCustomSeo: true,
   },
   {
     slug: "contact",
@@ -67,8 +75,14 @@ function copyRootStyles() {
   );
 }
 
-function writePage({ lang, currentPath, outPath, bodyHtml, scripts }) {
-  const html = renderPage({ lang, currentPath, bodyHtml, pageScripts: scripts });
+function writePage({ lang, currentPath, outPath, bodyHtml, scripts, seo }) {
+  const html = renderPage({
+    lang,
+    currentPath,
+    bodyHtml,
+    pageScripts: scripts,
+    seo,
+  });
   mkdirSync(path.dirname(outPath), { recursive: true });
   writeFileSync(outPath, html);
 }
@@ -85,8 +99,23 @@ function renderAllPages() {
         page.slug === ""
           ? path.join(langDir, "index.html")
           : path.join(langDir, page.slug, "index.html");
+      const seo = page.hasCustomSeo
+        ? {
+            title: t("seo.title"),
+            description: t("seo.description"),
+            ogTitle: t("seo.ogTitle"),
+            ogDescription: t("seo.ogDescription"),
+          }
+        : undefined;
 
-      writePage({ lang, currentPath, outPath, bodyHtml, scripts: page.scripts });
+      writePage({
+        lang,
+        currentPath,
+        outPath,
+        bodyHtml,
+        scripts: page.scripts,
+        seo,
+      });
     }
   }
 }

@@ -6,13 +6,19 @@ const BASE_URL = "https://better-together-dj.com";
 
 /**
  * currentPath is the canonical (German) path, e.g. "/", "/about-us", "/contact", "/imprint".
- * No route currently overrides the site-wide title/description, so, matching the previous
- * root.tsx behavior, every page shares the same per-language SEO meta from common.json.
+ * Most routes share the site-wide title/description from common.json (matching the previous
+ * root.tsx behavior), but a route can pass `seo` to override title/description/ogTitle/ogDescription
+ * with its own page-specific copy.
  */
-export function renderPage({ lang, currentPath, bodyHtml, pageScripts = [] }) {
+export function renderPage({ lang, currentPath, bodyHtml, pageScripts = [], seo }) {
   const t = createT(lang, "common");
   const isEnglish = lang === "en";
   const ogUrl = `${BASE_URL}${isEnglish ? "/en" : ""}${currentPath}`;
+
+  const pageTitle = seo?.title ?? t("seo.title");
+  const pageDescription = seo?.description ?? t("seo.description");
+  const pageOgTitle = seo?.ogTitle ?? t("seo.ogTitle");
+  const pageOgDescription = seo?.ogDescription ?? t("seo.ogDescription");
 
   const scriptTags = pageScripts
     .map((src) => `<script type="module" src="${src}"></script>`)
@@ -31,11 +37,11 @@ export function renderPage({ lang, currentPath, bodyHtml, pageScripts = [] }) {
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="dns-prefetch" href="https://www.youtube.com" />
 
-    <title>${t("seo.title")}</title>
-    <meta name="description" content="${t("seo.description")}" />
-    <meta property="og:title" content="${t("seo.ogTitle")}" />
+    <title>${pageTitle}</title>
+    <meta name="description" content="${pageDescription}" />
+    <meta property="og:title" content="${pageOgTitle}" />
     <meta property="og:url" content="${ogUrl}" />
-    <meta property="og:description" content="${t("seo.ogDescription")}" />
+    <meta property="og:description" content="${pageOgDescription}" />
     <meta property="og:image" content="/social-image.png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="${isEnglish ? "en_US" : "de_DE"}" />

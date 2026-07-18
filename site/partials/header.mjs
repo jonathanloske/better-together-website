@@ -17,6 +17,7 @@ export function renderHeader({ lang, currentPath, t }) {
     <div class="hidden space-x-6 md:flex md:items-center">
       ${langSwitcher}
       <a href="${langPrefix}/about-us" class="${navLinkClasses}">${t("nav.aboutUs")}</a>
+      <a href="${langPrefix}/international-weddings" class="${navLinkClasses}">${t("nav.internationalWeddings")}</a>
       <a href="${langPrefix}/contact" class="${navLinkClasses}">${t("nav.contact")}</a>
       <a href="${langPrefix}/imprint" class="${navLinkClasses}">${t("nav.imprint")}</a>
     </div>
@@ -40,6 +41,7 @@ export function renderHeader({ lang, currentPath, t }) {
       ${langSwitcher}
     </div>
     <a href="${langPrefix}/about-us" class="${mobileNavLinkClasses}">${t("nav.aboutUs")}</a>
+    <a href="${langPrefix}/international-weddings" class="${mobileNavLinkClasses}">${t("nav.internationalWeddings")}</a>
     <a href="${langPrefix}/contact" class="${mobileNavLinkClasses}">${t("nav.contact")}</a>
     <a href="${langPrefix}/imprint" class="${mobileNavLinkClasses}">${t("nav.imprint")}</a>
   </div>
