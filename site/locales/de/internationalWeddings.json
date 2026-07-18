@@ -6,6 +6,14 @@
     "paragraph3": "Eure Gäste sind für diesen einen Tag um die halbe Welt gereist – mit vertrauten Klängen aus ihrer Heimat sorgen wir dafür, dass sie sich in Deutschland trotzdem ein Stück zuhause fühlen.",
     "paragraph4": "Noch keine Erfahrung mit eurer Kulturkombination? Umso spannender! Wir lernen gerne dazu, gemeinsam mit euch, und machen jede neue Kultur zu einem besonderen Erlebnis für alle Gäste."
   },
+  "images": {
+    "photo1Alt": "Tanzende Menschen auf einer Hochzeit",
+    "photo2Alt": "Eine Gruppe von Menschen tanzt ausgelassen"
+  },
+  "credits": {
+    "photoBy": "Foto von",
+    "onUnsplash": "auf Unsplash"
+  },
   "cta": {
     "convinced": "Überzeugt? Schreibt uns unverbindlich – egal ob auf Deutsch oder Englisch"
   },
