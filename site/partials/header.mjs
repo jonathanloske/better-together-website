@@ -10,7 +10,7 @@ export function renderHeader({ lang, currentPath, t }) {
 
   return `<nav class="bg-white px-5 py-2.5">
   <div class="flex items-center justify-between">
-    <a href="${langPrefix || "/"}" class="mr4 w-56 sm:w-96">
+    <a href="${langPrefix || "/"}" class="mr-6 w-56 sm:w-96">
       <img src="/img/logo/logo-banner.png" alt="Better Together DJ Berlin Logo">
     </a>
 
