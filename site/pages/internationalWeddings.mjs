@@ -11,7 +11,8 @@ export function renderInternationalWeddings({ lang, t }) {
       <div class="mb-4 max-w-2xl px-6 lg:mx-auto">
         <p class="mb-4">${t("intro.paragraph1")}</p>
         <p class="mb-4">${t("intro.paragraph2")}</p>
-        <p>${t("intro.paragraph3")}</p>
+        <p class="mb-4">${t("intro.paragraph3")}</p>
+        <p>${t("intro.paragraph4")}</p>
       </div>
 
       <div class="mt-4 text-center lg:w-full">
