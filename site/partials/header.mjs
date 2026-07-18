@@ -10,13 +10,14 @@ export function renderHeader({ lang, currentPath, t }) {
 
   return `<nav class="bg-white px-5 py-2.5">
   <div class="flex items-center justify-between">
-    <a href="${langPrefix || "/"}" class="mr4 w-56 sm:w-96">
+    <a href="${langPrefix || "/"}" class="mr-6 w-56 sm:w-96">
       <img src="/img/logo/logo-banner.png" alt="Better Together DJ Berlin Logo">
     </a>
 
     <div class="hidden space-x-6 md:flex md:items-center">
       ${langSwitcher}
       <a href="${langPrefix}/about-us" class="${navLinkClasses}">${t("nav.aboutUs")}</a>
+      <a href="${langPrefix}/international-weddings" class="${navLinkClasses}">${t("nav.internationalWeddings")}</a>
       <a href="${langPrefix}/contact" class="${navLinkClasses}">${t("nav.contact")}</a>
       <a href="${langPrefix}/imprint" class="${navLinkClasses}">${t("nav.imprint")}</a>
     </div>
@@ -40,6 +41,7 @@ export function renderHeader({ lang, currentPath, t }) {
       ${langSwitcher}
     </div>
     <a href="${langPrefix}/about-us" class="${mobileNavLinkClasses}">${t("nav.aboutUs")}</a>
+    <a href="${langPrefix}/international-weddings" class="${mobileNavLinkClasses}">${t("nav.internationalWeddings")}</a>
     <a href="${langPrefix}/contact" class="${mobileNavLinkClasses}">${t("nav.contact")}</a>
     <a href="${langPrefix}/imprint" class="${mobileNavLinkClasses}">${t("nav.imprint")}</a>
   </div>
