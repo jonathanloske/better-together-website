@@ -8,6 +8,15 @@
   "testimonial": {
     "quote": "From the in-depth pre-wedding call all the way to the confident performance throughout the whole celebration: we really felt in great hands and are super happy that you were recommended to us! And thank you so much for so spontaneously running a salsa session, glad you had so much fun with it too. We really enjoyed it! :)"
   },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Which nationalities did you cover before?",
+        "answer": "Jonathan DJed at weddings for people from Morocco, Venezuela, India, Luxembourg, USA, and Thailand. Besides that, he started as a DJ for his former employer that had people from all over Europe, USA, Latin America, North Africa, and Asia, so internationalism has always been a factor for him."
+      }
+    ]
+  },
   "cta": {
     "convinced": "Convinced? Write us, no strings attached — whether in German or English"
   },

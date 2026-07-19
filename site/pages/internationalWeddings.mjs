@@ -24,6 +24,23 @@ export function renderInternationalWeddings({ lang, t }) {
         <p>${t("intro.paragraph3")}</p>
       </div>
 
+      <div class="mb-4 max-w-2xl px-6 lg:mx-auto">
+        <h3 class="mb-2 text-2xl font-bold">${t("faq.title")}</h3>
+        <div class="flex flex-col gap-2">
+          ${t("faq.items")
+            .map(
+              (item) => `<details class="group rounded-lg bg-white/10 p-4">
+            <summary class="cursor-pointer list-none font-bold marker:content-none">
+              <span class="inline-block w-4 group-open:rotate-90">›</span>
+              ${item.question}
+            </summary>
+            <p class="mt-2 pl-4">${item.answer}</p>
+          </details>`,
+            )
+            .join("\n          ")}
+        </div>
+      </div>
+
       <div class="mt-4 text-center lg:w-full">
         <a href="${langPrefix}/contact" class="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700">
           ${t("cta.convinced").replace("—", '—<br class="hidden md:inline" />')}

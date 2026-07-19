@@ -8,6 +8,15 @@
   "testimonial": {
     "quote": "Angefangen beim umfangreichen Vorgespräch bis hin zur souveränen Leistung während der ganzen Feier: Wir haben uns wirklich sehr wohl gefühlt und sind super happy, dass ihr uns empfohlen wurdet! Und vielen Dank, dass du dich so spontan auf die Salsa Session eingelassen hast und schön, dass dir das auch so viel Spaß gemacht hat. Wir haben das sehr genossen! :)"
   },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Welche Nationalitäten habt ihr bisher abgedeckt?",
+        "answer": "Jonathan hat schon auf Hochzeiten für Menschen aus Marokko, Venezuela, Indien, Luxemburg, den USA und Thailand aufgelegt. Davor hat er als DJ bei seinem früheren Arbeitgeber angefangen, bei dem Menschen aus ganz Europa, den USA, Lateinamerika, Nordafrika und Asien zu Gast waren — Internationalität war für ihn also schon immer ein wichtiger Faktor."
+      }
+    ]
+  },
   "cta": {
     "convinced": "Überzeugt? Schreibt uns unverbindlich — egal ob auf Deutsch oder Englisch"
   },
