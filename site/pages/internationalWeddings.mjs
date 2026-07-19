@@ -13,6 +13,10 @@ export function renderInternationalWeddings({ lang, t }) {
         <p class="mb-4">${t("intro.paragraph2")}</p>
       </div>
 
+      <div class="mb-2 max-w-2xl px-6 lg:mx-auto">
+        <p>${t("testimonial.lead")}</p>
+      </div>
+
       <div class="mb-4 max-w-2xl px-6 font-bold lg:mx-auto">
         <div class="relative rounded-lg bg-gradient-to-tr from-purple-100 to-pink-400 p-4 text-black before:absolute before:left-3 before:top-full before:-mt-px before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-purple-100">
           ${t("testimonial.quote")}
