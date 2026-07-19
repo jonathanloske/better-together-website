@@ -1,5 +1,3 @@
-import { responsiveImage } from "../image.mjs";
-
 export function renderInternationalWeddings({ lang, t }) {
   const langPrefix = lang === "en" ? "/en" : "";
 
@@ -15,17 +13,15 @@ export function renderInternationalWeddings({ lang, t }) {
         <p class="mb-4">${t("intro.paragraph2")}</p>
       </div>
 
-      <div class="mb-6 max-w-2xl px-6 lg:mx-auto">
-        ${responsiveImage({
-          name: "international-weddings-dancefloor-1",
-          alt: t("images.photoAlt"),
-          className: "w-full rounded-md",
-        })}
+      <div class="mb-4 max-w-2xl px-6 font-bold lg:mx-auto">
+        <div class="relative rounded-lg bg-gradient-to-tr from-purple-100 to-pink-400 p-4 text-black before:absolute before:left-3 before:top-full before:-mt-px before:w-0 before:border-l-8 before:border-r-8 before:border-t-8 before:border-l-transparent before:border-r-transparent before:border-t-purple-100">
+          ${t("testimonial.quote")}
+        </div>
+        <div class="mt-2">Inka</div>
       </div>
 
       <div class="mb-4 max-w-2xl px-6 lg:mx-auto">
-        <p class="mb-4">${t("intro.paragraph3")}</p>
-        <p>${t("intro.paragraph4")}</p>
+        <p>${t("intro.paragraph3")}</p>
       </div>
 
       <div class="mt-4 text-center lg:w-full">
@@ -33,12 +29,6 @@ export function renderInternationalWeddings({ lang, t }) {
           ${t("cta.convinced")}
         </a>
       </div>
-
-      <p class="mt-3 text-center text-xs text-white/50">
-        ${t("credits.photoBy")}
-        <a href="https://unsplash.com/de/@ardianlumi" class="underline hover:text-white/80" target="_blank" rel="noopener noreferrer">Ardian Lumi</a>
-        ${t("credits.onUnsplash")}
-      </p>
     </div>
   </div>
 </main>`;
