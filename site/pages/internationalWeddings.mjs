@@ -24,11 +24,13 @@ export function renderInternationalWeddings({ lang, t }) {
         <div class="mt-2">${t("testimonial.attribution")}</div>
       </div>
 
-      <div class="mb-4 max-w-2xl px-6 lg:mx-auto">
-        <p>${t("intro.paragraph3")}</p>
+      <div class="mt-4 text-center lg:w-full">
+        <a href="${langPrefix}/contact" class="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700">
+          ${t("cta.convinced").replace("—", '—<br class="hidden md:inline" />')}
+        </a>
       </div>
 
-      <div class="mb-4 max-w-2xl px-6 lg:mx-auto">
+      <div class="mb-4 mt-8 max-w-2xl px-6 lg:mx-auto">
         <h3 class="mb-2 text-2xl font-bold">${t("faq.title")}</h3>
         <div class="flex flex-col gap-2">
           ${t("faq.items")
@@ -43,12 +45,6 @@ export function renderInternationalWeddings({ lang, t }) {
             )
             .join("\n          ")}
         </div>
-      </div>
-
-      <div class="mt-4 text-center lg:w-full">
-        <a href="${langPrefix}/contact" class="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700">
-          ${t("cta.convinced").replace("—", '—<br class="hidden md:inline" />')}
-        </a>
       </div>
     </div>
   </div>
