@@ -26,7 +26,7 @@ export function renderInternationalWeddings({ lang, t }) {
 
       <div class="mt-4 text-center lg:w-full">
         <a href="${langPrefix}/contact" class="mx-auto block w-fit rounded-md border-2 border-violet-700 bg-white px-2 py-2 text-2xl text-violet-700">
-          ${t("cta.convinced")}
+          ${t("cta.convinced").replace("—", '—<br class="hidden md:inline" />')}
         </a>
       </div>
     </div>
