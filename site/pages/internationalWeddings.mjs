@@ -34,7 +34,7 @@ export function renderInternationalWeddings({ lang, t }) {
               <span class="inline-block w-4 group-open:rotate-90">›</span>
               ${item.question}
             </summary>
-            <p class="mt-2 pl-4">${item.answer}</p>
+            ${item.answer.map((paragraph) => `<p class="mt-2 pl-4">${paragraph}</p>`).join("\n            ")}
           </details>`,
             )
             .join("\n          ")}

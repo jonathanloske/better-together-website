@@ -13,11 +13,16 @@
     "items": [
       {
         "question": "Which nationalities did you cover before?",
-        "answer": "Jonathan DJed at weddings for people from Morocco, Venezuela, India, Luxembourg, USA, and Thailand. Besides that, he started as a DJ for his former employer that had people from all over Europe, USA, Latin America, North Africa, and Asia, so internationalism has always been a factor for him."
+        "answer": [
+          "Jonathan DJed at weddings for people from Morocco, Venezuela, India, Luxembourg, USA, and Thailand. Besides that, he started as a DJ for his former employer that had people from all over Europe, USA, Latin America, North Africa, and Asia, so internationalism has always been a factor for him."
+        ]
       },
       {
         "question": "What's your process?",
-        "answer": "When you contact us, we set up a meeting with you, either online or in person, where we discuss your wedding in detail and all of your wishes. Do you want to have a wedding dance? Should we bring additional microphones? We also discuss your musical wishes and inquire about your guests - who's coming from where? Are there groups you want to create special moments for? You call the shots, we help you align. Afterwards, we will know all we need for now and you will have time to consider our offer and build a playlist that you send us. The next time we meet is a few weeks before your wedding so we can be more specific: What is your timeline for the day? We once again talk about your music and whether your plans are still the same as when we talked last time. We also get the numbers of your maid of honor and best man so we don't need to bother you directly during your wedding day. With that, we have everything we need to create your perfect wedding party."
+        "answer": [
+          "When you contact us, we set up a meeting with you, either online or in person, where we discuss your wedding in detail and all of your wishes. Do you want to have a wedding dance? Should we bring additional microphones? We also discuss your musical wishes and inquire about your guests - who's coming from where? Are there groups you want to create special moments for? Crucially, you also tell us what you don't want: uncle Jürgen is crazy for Schlager but you're not? If you want, we can politely decline his Schlager wishes for the evening. You call the shots, we help you align. Afterwards, we will know all we need for now and you will have time to consider our offer and build a playlist that you send us.",
+          "The next time we meet is a few weeks before your wedding so we can be more specific: What is your timeline for the day? We once again talk about your music and whether your plans are still the same as when we talked last time. We also get the numbers of your maid of honor and best man so we don't need to bother you directly during your wedding day. With that, we have everything we need to create your perfect wedding party."
+        ]
       }
     ]
   },
