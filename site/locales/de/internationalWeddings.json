@@ -2,11 +2,36 @@
   "title": "Internationale Hochzeiten - Kulturen verbinden mit Better Together",
   "intro": {
     "paragraph1": "Eure Liebe kennt keine Grenzen? Dann soll eure Hochzeit das auch nicht! Rund die Hälfte aller Hochzeiten, für die wir als Better Together auflegen, sind international oder binational — von Deutsch-Marokkanisch über Deutsch-Venezolanisch bis Luxemburg-Indisch, inklusive einer viersprachigen Zeremonie auf Deutsch, Englisch, Französisch und Arabisch. Wir sprechen beide fließend Deutsch und Englisch, und beide haben wir im Ausland gelebt — Jonathan in den USA und Kanada, Vera in England.",
-    "paragraph2": "Unser Geheimnis? Im Vorgespräch lernen wir eure Musikwelten kennen. Ihr schickt uns Songs, die euch wichtig sind, und wir recherchieren zusätzlich selbst — denn zwischen „die Braut kommt aus Thailand” und dem Wissen, dass koreanische Musik dort extrem beliebt ist, liegt ein großer Unterschied. Genau das haben wir bei einer Hochzeit erlebt: „Gangnam Style” hat die Menge begeistert aufgenommen — ein Moment, der nur durch echte Recherche möglich wird. So finden wir Songs, die beide Kulturen kennen und lieben, von Punjabi MC bis Stromae, und schaffen daneben bewusst Momente, die einer Kultur ganz allein gehören.",
-    "paragraph3": "Noch keine Erfahrung mit eurer Kulturkombination? Umso spannender! Wir lernen gerne dazu, gemeinsam mit euch, und machen jede neue Kultur zu einem besonderen Erlebnis für alle Gäste."
+    "paragraph2": "Unser Geheimnis? Im Vorgespräch lernen wir eure Musikwelten kennen. Ihr schickt uns Songs, die euch wichtig sind, und wir recherchieren zusätzlich selbst — denn zwischen „die Braut kommt aus Thailand” und dem Wissen, dass koreanische Musik dort extrem beliebt ist, liegt ein großer Unterschied. Genau das haben wir bei einer Hochzeit erlebt: „Gangnam Style” hat die Menge begeistert aufgenommen — ein Moment, der nur durch echte Recherche möglich wird. So finden wir Songs, die beide Kulturen kennen und lieben, von Punjabi MC über Stromae bis BTS, und schaffen daneben bewusst Momente, die einer Kultur ganz allein gehören."
   },
   "testimonial": {
-    "quote": "Angefangen beim umfangreichen Vorgespräch bis hin zur souveränen Leistung während der ganzen Feier: Wir haben uns wirklich sehr wohl gefühlt und sind super happy, dass ihr uns empfohlen wurdet! Und vielen Dank, dass du dich so spontan auf die Salsa Session eingelassen hast und schön, dass dir das auch so viel Spaß gemacht hat. Wir haben das sehr genossen! :)"
+    "lead": "Im besten Fall planen wir das im Voraus, aber wir können uns auch kurzfristig anpassen, wie bei Inkas Hochzeit, wo die Gäste nach mehr Salsa verlangt haben:",
+    "quote": "Angefangen beim umfangreichen Vorgespräch bis hin zur souveränen Leistung während der ganzen Feier: Wir haben uns wirklich sehr wohl gefühlt und sind super happy, dass ihr uns empfohlen wurdet! Und vielen Dank, dass du dich so spontan auf die Salsa Session eingelassen hast und schön, dass dir das auch so viel Spaß gemacht hat. Wir haben das sehr genossen! :)",
+    "attribution": "Inka, Braut, aufgewachsen in Venezuela"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Welche Nationalitäten habt ihr bisher abgedeckt?",
+        "answer": [
+          "Jonathan hat schon auf Hochzeiten für Menschen aus Marokko, Venezuela, Indien, Luxemburg, den USA und Thailand aufgelegt. Davor hat er als DJ bei seinem früheren Arbeitgeber angefangen, bei dem Menschen aus ganz Europa, den USA, Lateinamerika, Nordafrika und Asien zu Gast waren — Internationalität war für ihn also schon immer ein wichtiger Faktor."
+        ]
+      },
+      {
+        "question": "Wie läuft die Zusammenarbeit ab?",
+        "answer": [
+          "Wenn ihr uns kontaktiert, vereinbaren wir ein erstes Treffen mit euch, entweder online oder persönlich, bei dem wir eure Hochzeit im Detail und all eure Wünsche besprechen. Wollt ihr einen Hochzeitstanz? Sollen wir zusätzliche Mikrofone mitbringen? Wir sprechen auch über eure musikalischen Wünsche und fragen nach euren Gästen — wer kommt woher? Gibt es Gruppen, für die ihr besondere Momente schaffen möchtet? Wichtig ist auch, dass ihr uns sagt, was ihr nicht wollt: Onkel Jürgen steht total auf Schlager, ihr aber nicht? Auf Wunsch lehnen wir seine Schlagerwünsche für den Abend höflich ab. Ihr gebt die Richtung vor, wir helfen euch, sie umzusetzen. Danach wissen wir alles, was wir für den Moment brauchen, und ihr habt Zeit, unser Angebot in Ruhe zu prüfen und eine Playlist zusammenzustellen, die ihr uns schickt.",
+          "Das nächste Treffen findet einige Wochen vor eurer Hochzeit statt, damit wir konkreter werden können: Wie sieht euer Zeitplan für den Tag aus? Wir sprechen erneut über eure Musik und ob eure Pläne noch dieselben sind wie beim letzten Gespräch. Außerdem holen wir uns die Nummern von Trauzeugin und Trauzeuge, damit wir euch an eurem Hochzeitstag nicht direkt stören müssen. Damit haben wir alles, was wir brauchen, um eure perfekte Hochzeitsparty zu gestalten."
+        ]
+      },
+      {
+        "question": "Und wenn unser Land noch nicht dabei ist?",
+        "answer": [
+          "Umso spannender für uns! Auch wenn wir eine bestimmte Kombination noch nicht hatten, gehen wir mit der gleichen Sorgfalt ran wie bei jeder Hochzeit: Im Vorgespräch erzählt ihr uns von den Momenten, die euch wichtig sind — gibt es eine Zeremonie, einen Brauch oder eine Tradition, die wir kennen sollten? Wir recherchieren dann gezielt weiter: Es reicht uns nicht zu wissen, woher die Braut oder der Bräutigam kommt — wir wollen verstehen, was die Musik und die Bräuche für eure Familien und Gäste bedeuten. So wird auch eure Kulturkombination zu einem besonderen, persönlichen Erlebnis für alle."
+        ]
+      }
+    ]
   },
   "cta": {
     "convinced": "Überzeugt? Schreibt uns unverbindlich — egal ob auf Deutsch oder Englisch"

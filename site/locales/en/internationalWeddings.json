@@ -2,11 +2,36 @@
   "title": "International Weddings - Bridging Cultures with Better Together",
   "intro": {
     "paragraph1": "Your love knows no borders? Then neither should your wedding! Roughly half of all the weddings we DJ as Better Together are international or binational — from German-Moroccan to German-Venezuelan to Luxembourgish-Indian, including one four-language ceremony in German, English, French, and Arabic. We're both fluent in German and English, and we've both lived abroad: Jonathan in the USA and Canada, Vera in England.",
-    "paragraph2": "Our secret? In our pre-wedding call, we get to know your musical worlds. You send us songs that matter to you, and we do our own research on top of that — because there's a big difference between \"the bride is from Thailand\" and knowing that Korean music is hugely popular there. We experienced exactly that at one wedding: \"Gangnam Style\" had the crowd going wild — a moment that's only possible with real research. That's how we find songs both cultures know and love, from Punjabi MC to Stromae, while also deliberately creating moments that belong entirely to just one culture.",
-    "paragraph3": "No experience yet with your particular cultural combination? Even more exciting! We love learning something new, together with you, and turn every new culture into a special experience for all your guests."
+    "paragraph2": "Our secret? In our pre-wedding call, we get to know your musical worlds. You send us songs that matter to you, and we do our own research on top of that — because there's a big difference between \"the bride is from Thailand\" and knowing that Korean music is hugely popular there. We experienced exactly that at one wedding: \"Gangnam Style\" had the crowd going wild — a moment that's only possible with real research. That's how we find songs both cultures know and love, from Punjabi MC over Stromae to BTS, while also deliberately creating moments that belong entirely to just one culture."
   },
   "testimonial": {
-    "quote": "From the in-depth pre-wedding call all the way to the confident performance throughout the whole celebration: we really felt in great hands and are super happy that you were recommended to us! And thank you so much for so spontaneously running a salsa session, glad you had so much fun with it too. We really enjoyed it! :)"
+    "lead": "At best, we plan this ahead of time but we are also able to adapt on short notice, like at Inka's wedding where the crowd requested more salsa:",
+    "quote": "From the in-depth pre-wedding call all the way to the confident performance throughout the whole celebration: we really felt in great hands and are super happy that you were recommended to us! And thank you so much for so spontaneously running a salsa session, glad you had so much fun with it too. We really enjoyed it! :)",
+    "attribution": "Inka, bride, grew up in Venezuela"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Which nationalities did you cover before?",
+        "answer": [
+          "Jonathan DJed at weddings for people from Morocco, Venezuela, India, Luxembourg, USA, and Thailand. Besides that, he started as a DJ for his former employer that had people from all over Europe, USA, Latin America, North Africa, and Asia, so internationalism has always been a factor for him."
+        ]
+      },
+      {
+        "question": "What's your process?",
+        "answer": [
+          "When you contact us, we set up a meeting with you, either online or in person, where we discuss your wedding in detail and all of your wishes. Do you want to have a wedding dance? Should we bring additional microphones? We also discuss your musical wishes and inquire about your guests - who's coming from where? Are there groups you want to create special moments for? Crucially, you also tell us what you don't want: uncle Jürgen is crazy for Schlager but you're not? If you want, we can politely decline his Schlager wishes for the evening. You call the shots, we help you align. Afterwards, we will know all we need for now and you will have time to consider our offer and build a playlist that you send us.",
+          "The next time we meet is a few weeks before your wedding so we can be more specific: What is your timeline for the day? We once again talk about your music and whether your plans are still the same as when we talked last time. We also get the numbers of your maid of honor and best man so we don't need to bother you directly during your wedding day. With that, we have everything we need to create your perfect wedding party."
+        ]
+      },
+      {
+        "question": "And what if our country hasn't come up before?",
+        "answer": [
+          "Even more exciting for us! Even if we haven't had a particular combination before, we approach it with the same care as every wedding: in our pre-wedding call, you tell us about the moments that matter to you — is there a ceremony, a custom, or a tradition we should know about? We then research further in a targeted way: it's not enough for us to know where the bride or groom is from — we want to understand what the music and customs mean for your families and guests. That way, your cultural combination becomes a special, personal experience for everyone too."
+        ]
+      }
+    ]
   },
   "cta": {
     "convinced": "Convinced? Write us, no strings attached — whether in German or English"
