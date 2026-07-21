@@ -1,3 +1,5 @@
+import { responsiveImage } from "../image.mjs";
+
 export function renderInternationalWeddings({ lang, t }) {
   const langPrefix = lang === "en" ? "/en" : "";
 
@@ -12,6 +14,15 @@ export function renderInternationalWeddings({ lang, t }) {
         <p class="mb-4">${t("intro.paragraph1")}</p>
         <p class="mb-4">${t("intro.paragraph2")}</p>
       </div>
+
+      <figure class="mb-4 max-w-2xl px-6 lg:mx-auto">
+        ${responsiveImage({
+          name: "international-wedding-dance-floor",
+          alt: t("photo.alt"),
+          className: "w-full rounded-lg",
+        })}
+        <figcaption class="mt-2 text-center text-sm italic text-white/70">${t("photo.caption")}</figcaption>
+      </figure>
 
       <div class="mb-2 max-w-2xl px-6 lg:mx-auto">
         <p>${t("testimonial.lead")}</p>
