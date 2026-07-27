@@ -34,7 +34,7 @@ netlify deploy --build --prod   # Production deployment
 ### Tech Stack
 - **Build**: `build.mjs` — a plain Node script, no bundler/framework
 - **Templating**: JS template-literal functions in `site/` (no JSX, no client-side hydration)
-- **Styling**: Tailwind CSS, compiled via the `tailwindcss` CLI directly (its built-in vendor prefixing means no separate PostCSS/Autoprefixer packages are needed)
+- **Styling**: Tailwind CSS v4, compiled via the `tailwindcss` CLI directly (its built-in vendor prefixing means no separate PostCSS/Autoprefixer packages are needed). Config is CSS-native — `site/styles/tailwind.css` has `@import "tailwindcss"` and an `@source` directive instead of a `tailwind.config.js` file.
 - **Fonts**: Self-hosted Nunito Sans — `@fontsource/nunito-sans` is used only as a source of static font files at build time (see `site/fonts.mjs`), not as a runtime/bundler dependency
 - **Interactivity**: small vanilla JS files in `public/js/`, no client-side framework
 - **Images**: Netlify Image CDN (on-request WebP transforms), no build-time image processing
