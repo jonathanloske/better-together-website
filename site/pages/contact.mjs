@@ -59,7 +59,7 @@ export function renderContact({ t }) {
                 id="name"
                 name="name"
                 placeholder="${t("form.namePlaceholder")}"
-                class="h-10 w-full rounded-md px-2 leading-10 text-black"
+                class="h-10 w-full rounded-md border border-gray-300 bg-white px-2 leading-10 text-black"
               />
             </fieldset>
           </div>
@@ -71,7 +71,7 @@ export function renderContact({ t }) {
                 id="email"
                 name="email"
                 placeholder="${t("form.emailPlaceholder")}"
-                class="h-10 w-full rounded-md px-2 leading-10 text-black"
+                class="h-10 w-full rounded-md border border-gray-300 bg-white px-2 leading-10 text-black"
               />
             </fieldset>
           </div>
@@ -85,7 +85,7 @@ export function renderContact({ t }) {
             placeholder="${t("form.messagePlaceholder")}"
             rows="8"
             cols="80"
-            class="w-full rounded-md px-2 py-2 leading-5 text-black"
+            class="w-full rounded-md border border-gray-300 bg-white px-2 py-2 leading-5 text-black"
           ></textarea>
         </fieldset>
         <input type="hidden" name="form-name" value="contact" />
