@@ -12,7 +12,7 @@ The site was previously built with React Router v7/v8 + Vite; it was rewritten t
 
 ### Development
 ```bash
-npm install              # Install dependencies (tailwindcss, @fontsource/nunito-sans, prettier)
+npm install
 npm run dev              # Build once and serve build/client at localhost:3000 (no live-reload)
 netlify dev               # Build + serve with Netlify Forms and Image CDN emulation (localhost:8888)
 ```
@@ -21,12 +21,6 @@ netlify dev               # Build + serve with Netlify Forms and Image CDN emula
 ```bash
 npm run build            # Run build.mjs: render all pages, compile Tailwind, copy assets
 npm run start            # Serve build/client in a production-like environment via `netlify serve` (localhost:8888)
-```
-
-### Netlify Deployment
-```bash
-netlify deploy --build          # Preview deployment
-netlify deploy --build --prod   # Production deployment
 ```
 
 ## Architecture
@@ -40,17 +34,6 @@ netlify deploy --build --prod   # Production deployment
 - **Images**: Netlify Image CDN (on-request WebP transforms), no build-time image processing
 - **Internationalization**: a ~20-line custom loader (`site/i18n.mjs`) reading JSON locale files, no i18next
 - **Deployment**: Netlify, static files only (`ssr: false` equivalent — there never was a server)
-
-### Build Process (`build.mjs`)
-Running `npm run build` does, in order:
-1. Cleans `build/client/`
-2. Copies `public/*` (static assets: images, favicons, `robots.txt`, `sitemap.xml`, `contact-helper.html`, `js/`) into `build/client/`
-3. Copies `site/styles/root.css` into `build/client/assets/`
-4. Runs `tailwindcss` CLI to compile `site/styles/tailwind.css` → `build/client/assets/tailwind.css` (content globs scan `site/**/*.mjs` for class names)
-5. Copies the Latin + Latin-ext Nunito Sans font files from `node_modules/@fontsource/nunito-sans` into `build/client/fonts/` and generates `build/client/assets/fonts.css` (see `site/fonts.mjs`)
-6. Renders all 8 routes (4 pages × 2 languages) to static HTML and writes them to `build/client/` (e.g. `build/client/about-us/index.html`, `build/client/en/about-us/index.html`)
-
-Output routes: `/`, `/about-us`, `/contact`, `/imprint`, `/en`, `/en/about-us`, `/en/contact`, `/en/imprint` — matching `public/sitemap.xml`.
 
 ### Page Templates (`site/`)
 - `site/layout.mjs`: renders the full `<html>` document — meta tags, hreflang alternates, OpenGraph tags, favicon links, stylesheet links — matching what `root.tsx` used to produce. No route currently overrides the site-wide title/description; all pages share the same per-language SEO meta from `common.json`.
@@ -69,9 +52,4 @@ Loaded via `<script type="module">` tags per page (see the `scripts` array per p
 Still Netlify Forms (`data-netlify="true"`, no backend). `public/contact-helper.html` is the static fallback page Netlify's build-time bot scans to register the form (also used as the JS-fetch target and the no-JS `action` fallback).
 
 ### Internationalization (i18n)
-- **Locale files**: `site/locales/{lang}/{namespace}.json` — `common`, `home`, `about`, `contact`, `imprint`
-- **Current languages**: German (`de`, default), English (`en`)
-- **Adding new languages**: add a new `site/locales/{lang}/` directory with the same five JSON files, then add the language to the `for (const lang of [...])` loop in `build.mjs`
-
-### Node Version
-Requires Node.js >= 20.0.0 (specified in `package.json` engines and `.nvmrc`).
+- **Adding new languages**: add a new `site/locales/{lang}/` directory with the same JSON namespace files as an existing language, then add the language to the `for (const lang of [...])` loop in `build.mjs`
